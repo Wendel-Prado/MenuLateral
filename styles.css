@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    bottom: -190px;
+    position: relative;
+}
+.box{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 0.6rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.box:hover{
+    width: 50px;
+    background: #c32aa3;
+    border-radius: 35px;
+    color: #fff;
+    box-shadow: 0 0 50px #b315917c;
+}
+
+.box .icon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all .4s ease;
+}
+.whatsapp{
+    background-color: #25d366;
+}
+.maisIm{
+    background-color: #d36a25;
+}
+.callMe{
+    background-color: #d36a25;
+}
+.menu{
+    background-color: #d36a25;
+}
+.box:nth-child(1){
+    display: none;
+}
+.box:nth-child(2){
+    display: none;
+}
+.box:nth-child(3){
+    display: none;
+}
+
+.box:nth-child(1):hover{
+    background: #25d366;
+    box-shadow: 0 0 40px #25d3657e;
+}
+.box:nth-child(2):hover{
+    background: #d36a25;
+    box-shadow: 0 0 40px #d6711f7e;
+}
+.box:nth-child(3):hover{
+    background: #d36a25;
+    box-shadow: 0 0 40px #d6711f7e;
+}
+.box:nth-child(4):hover{
+    background: #d36a25;
+    box-shadow: 0 0 40px #d6711f7e;
+}
+
+.box:hover .icon{
+        color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.26);
+    }
