@@ -10,7 +10,9 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+   
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     
 </head>
 <body>
@@ -21,12 +23,12 @@
             </div>
             
         </div>
-        <div id="maisIm" class="box" style="display: none;">
+        <div id="maisIm" class="box" style="display: none;" onclick="clickMaisIm()">
             <div class="icon maisIm">
                 <i class="fa-solid fa-comment"></i>
         </div>
         </div>
-        <div id="callMe" class="box" style="display:none">
+        <div id="callMe" class="box" style="display:none" onclick="clickCallme()">
             <div class="icon callMe">
                 <ion-icon  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIH
                                     htbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xXzIpIj4KPHBhdGggZD0iTTQzOS40NCA0MTEuNTk1TDM2Mi4xMjEgMzM
@@ -50,7 +52,13 @@
         </div>
         <div class="box" onclick="handleClick()">
             <div class="icon menu">
-                <i class="fa-solid fa-comments"></i>
+                <div class="baloon">
+                        <div class="nvoip">
+                            <img src="../icon/icone-128x128 white.png" class="nvoip">
+                        </div>
+                </div>
+               
+                
             </div>
         </div>
     </div>
@@ -61,15 +69,15 @@
                 <div class="form" >
                         <h3>Olá! Preencha os campos abaixo para iniciar a conversa no WhatsApp</h3>
                         <div class="form-element">
-                            <input type="text" id="nome" placeholder="Nome*" required="required">
+                            <input type="text" id="nome" placeholder="Nome*" required="required" value="">
                         </div>
                         <div class="form-element">
-                            <input type="text" id="email" placeholder="Email*" required="required">
+                            <input type="text" id="email" placeholder="Email*" required="required" value="">
                         </div>
+                         <div class="form-element">
+                            <input type="tel" id="celular" placeholder="+55 (99) 99999-9999" required="required" value="">
                         <div class="form-element">
-                            <input type="tel" id="celular" placeholder="Celular*" required="required">
-                        <div class="form-element">
-                            <input type="checkbox" id="confirm" required="required">
+                            <input type="checkbox" id="confirm" required="required" value="">
                             <label for="confirm">Eu concordo em receber comunicações.</label>
                         </div>
                         <p>Ao informar meus dados, eu concordo com a <a href="https://www.nvoip.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>  e com os <a href="https://www.nvoip.com.br/documentos/termo-de-uso.pdf" target="_blank">Termos de Uso</a>. </p>
@@ -80,8 +88,24 @@
             </form>
             
     </div>
-    <script src="main.js"></script>
-</body>
+    
 
+    <script>
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({
+            "gtm.start": new Date().getTime(),
+            event: "gtm.js"
+          });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-KNRGHHL");
+      </script>
+      <script src="main.js"></script>
+</body>
 
 </html>

@@ -1,6 +1,5 @@
 
 
-
 function handleClick(){
     var wpp = document.getElementById("wpp")
     var maisIm = document.getElementById("maisIm")
@@ -20,6 +19,15 @@ function handleClick(){
         callMe.style.display = "none";
     }
 }
+
+
+function clickMaisIm(){
+    document.getElementById('mais-support-compact').click();
+}
+function clickCallme(){
+    document.querySelector("._6h2kp91").click();
+}
+
 function openModal(){
     let open = document.getElementById("popup")
     open.classList.add("active");
@@ -41,6 +49,7 @@ function isMobile() {
     return false;
 }
 
+
 const formulario = document.querySelector('#formulario');
 const buttonSubmit = document.querySelector('#submit');
 const urlDesktop = 'https://web.whatsapp.com/';
@@ -55,13 +64,16 @@ formulario.addEventListener('submit', (event) => {
         let nome = document.querySelector('#nome').value
         let celular = document.querySelector('#celular').value
         let email = document.querySelector('#email').value
-        let mensagem = 'send?phone=' + telefone + '&text=Gostaria de conversar mais sobre como a Nvoip pode ajudar minha empresa%0AMeu Nome é ' + nome + '%0AMeu telefone para contato:%0A' + celular + '%0AMeu email:%0A' + email + ''
-        if(isMobile()) {
-            window.open(urlMobile + mensagem, '_blank')
-        }else{
-            window.open(urlDesktop + mensagem, '_blank')
-        }
+        document.querySelector("#rd-text_field-lPgGDLCONuYA1j31y6Fl4Q").value = nome
+        document.querySelector("#rd-phone_field-gkJfI91Ixmun-bPXKf7Cyg").value = "+55" + celular
+        document.querySelector("#rd-email_field-zDp4PJd28U3WZWW92N9qDw").value = email
+        
+        
+
         buttonSubmit.innerHTML = '<i class="fab fa-whatsapp"></i> Iniciar a conversa'
         buttonSubmit.disabled = false
-    }, 3000);
+        console.log(document.querySelector("#rd-text_field-lPgGDLCONuYA1j31y6Fl4Q").value)
+        document.querySelector("#rd-button-ks4re99u").click()
+    }, 300);
+    
 });
