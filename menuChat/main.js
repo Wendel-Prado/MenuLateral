@@ -62,10 +62,10 @@ formulario.addEventListener('submit', (event) => {
     buttonSubmit.disabled = true
     setTimeout(() => {
         let nome = document.querySelector('#nome').value
-        let celular = document.querySelector('#celular').value
+        let celular = document.querySelector('#telefone').value
         let email = document.querySelector('#email').value
         document.querySelector("#rd-text_field-lPgGDLCONuYA1j31y6Fl4Q").value = nome
-        document.querySelector("#rd-phone_field-gkJfI91Ixmun-bPXKf7Cyg").value = "+55" + celular
+        document.querySelector("#rd-phone_field-gkJfI91Ixmun-bPXKf7Cyg").value = "+55 " + celular
         document.querySelector("#rd-email_field-zDp4PJd28U3WZWW92N9qDw").value = email
         
         
@@ -77,3 +77,20 @@ formulario.addEventListener('submit', (event) => {
     }, 300);
     
 });
+const masks = {
+phone (value) {
+    return value
+      .replace(/\D+/g, '')
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{4})(\d)/, '$1-$2')
+      .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+      .replace(/(-\d{4})\d+?$/, '$1')
+  }
+}
+document.querySelectorAll('input').forEach($input => {
+    const field = $input.dataset.js
+  
+    $input.addEventListener('input', e => {
+      e.target.value = masks[field](e.target.value)
+    }, false)
+  })
