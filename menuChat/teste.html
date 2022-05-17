@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    (function(win, doc, scriptTag, jsFile, token, element) {
+        win.addEventListener('load', function() {
+            win.top.chatNvoip || (function() {
+                element = doc.createElement(scriptTag);
+                scriptTag = doc.getElementsByTagName(scriptTag)[0];
+                element.src = 'embed.js';
+                element.id = 'chatNvoip';
+                element.charset = 'utf-8';
+                scriptTag.parentNode.insertBefore(element, scriptTag);
+            })()
+        })
+    })(window, document, 'script', 'embed.js');
+    
+    </script>
+    
+</body>
+
+</html>
+
