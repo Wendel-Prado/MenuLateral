@@ -62,7 +62,6 @@
 		document.head.append(link);
 
 		let teste = document.querySelector('#menu-nvoip')
-		console.log(teste)
 		teste.addEventListener("load",()=>{self.render();})
 	
 	},

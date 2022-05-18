@@ -15,17 +15,17 @@ body{
 #mais-support-widget{
     position: relative;
     top:220px !important;
-    left:998px !important;
+    left:996px !important;
 }
 .closed.minimized{
     display: none !important;
 }
-/* ._6h2kp91{
+._6h2kp91{
     display: none;
-} */
-/* ._6h2kp93{
+}
+._6h2kp93{
     display: none !important;
-}  */
+} 
 
 /*Botões    */
 .navbar{
@@ -40,18 +40,13 @@ body{
     align-items: center;
     padding: 5px;
     margin: 0.6rem;
-    position: relative;
+    position: initial;
     overflow: hidden;
     cursor: pointer;
     
 }
-.box:hover{
-    width: 50px;
-    background: #c32aa3;
-    border-radius: 35px;
-    color: #fff;
-    box-shadow: 0 0 50px #b315917c;
-}
+
+
 .nvoipIcon{
     max-width: 25px;
     margin-top: 3px;
@@ -80,21 +75,42 @@ body{
     margin-right: 10px;
     transition: all .4s ease;
 }
+.nvoipIcon{
+ border-radius: 15px;
+  box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
+  animation: pulse-orange 2s infinite;
+}
+@keyframes pulse-orange {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 15px rgba(255, 121, 63, 1);
+    }
+    
+    70% {
+      transform: scale(1.2);
+      box-shadow: 0 0  0 20px rgba(255, 121, 63, 0);
+    }
+    
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 15px rgba(255, 121, 63, 0);
+    }
+  }
 .box .icon .baloon{
     position: relative;
 }
 
 .whatsapp{
-    background-color: #25d366;
+    background-color: #07be07;
 }
 .maisIm{
-    background-color: #d36a25;
+    background-color: rgb(243, 116, 53)
 }
 .callMe{
-    background-color: #d36a25;
+    background-color: rgb(243, 116, 53)
 }
 .menu{
-    background-color: #d36a25;
+    background-color: rgb(243, 116, 53)
 }
 
 .box:nth-child(4){
@@ -113,26 +129,38 @@ body{
     top: 750px;
     position: fixed;
 }
-.box:nth-child(1):hover{
-    background: #25d366;
-    box-shadow: 0 0 40px #25d3657e;
+.box .icon.menu{
+    top:15px;
+    right:0px;
+    margin-right: 0px;
+    left: 25px;}
+.icon.whatsapp:hover{
+    background: #059405;
+    }
+.icon:hover{
+    background: #d65905;
+    box-shadow:  0px 0 0 50px #d6711f7e;
 }
-.box:nth-child(2):hover{
-    background: #d36a25;
-    box-shadow: 0 0 40px #d6711f7e;
-}
-.box:nth-child(3):hover{
-    background: #d36a25;
-    box-shadow: 0 0 40px #d6711f7e;
-}
-.box:nth-child(4):hover{
-    background: #d36a25;
-    box-shadow: 0 0 40px #d6711f7e;
+#boxNvoip{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    width: 81px;
+    margin-bottom: 0px;
+    height: 77px;
+    top: 580px;
+    bottom: 0px;
+    right: 25px;
+    left: 1275px;
 }
 
 .box:hover .icon{
         color: #fff;
-        box-shadow: 0 0 20px rgba(0,0,0,0.26);
+        box-shadow: 0 0 90px rgba(0,0,0,0.26);
     }
 
 /*Botões    -- FIM */
@@ -336,3 +364,24 @@ p{
     }
 
 }
+#boxNvoip{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    width: 81px;
+    margin-bottom: 0px;
+    height: 77px;
+    top: 580px;
+    bottom: 0px;
+    right: 25px;
+    left: 1275px;
+}
+.box .icon.menu{
+    top:15px;
+    right:0px;
+    margin-right: 0px;
+    left: 25px;}

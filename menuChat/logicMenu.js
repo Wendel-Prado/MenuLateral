@@ -33,6 +33,11 @@ function handleClick(){
 }
 
 function clickMaisIm(){
+    closeModal()
+    const preventClick = document.querySelector('#mais-support-widget')
+    const teste = document.querySelector('#mais-support-app')
+    
+    if (preventClick === null){
     var elem = document.createElement('script');
     var script = document.getElementsByTagName('script')[0];
 
@@ -44,23 +49,24 @@ function clickMaisIm(){
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
-    
 
+    } else if (preventClick !== null){
+        document.querySelector('#mais-support-header').click()
+        
+    }
     
-    
-
-    event.preventDefault();
-    let close = document.querySelector('.hide')
-    
-        console.log (close)
-	
 }
 
      
 
 function clickCallme(){
+    closeModal()
+    closeMaisIm()
+    async function automatic (){
+    const preventClick = document.querySelector('#callMe')
+    if(preventClick == null){
     const link = document.createElement('link');
-		link.id= 'menu-nvoip';
+		link.id= 'callMe';
 		link.href = 'https://nvoipcom.s3-sa-east-1.amazonaws.com/public/callme/dist/main.css';
         link.media='screen';
 		link.rel = 'stylesheet';
@@ -70,14 +76,34 @@ function clickCallme(){
     const body = document.getElementsByTagName('body')
     const script = document.createElement('script');
     script.src = "https://nvoipcom.s3.sa-east-1.amazonaws.com/public/callme/dist2/bundle.js";
-    let windowScript  = document.createElement('script')
-    
-
-    
-    document.body.append(script,windowScript )
+    script.onload = function(){
+        window.nvoipcallpage.init("900150983cd24fb0d6963f7d28e17f72");
+    }
    
+    
+    document.body.insertAdjacentElement('beforeend',script)
+    
+   
+        }
+    }
+    automatic ()
+    
+    setTimeout(()=>{
+        document.querySelector("._6h2kp91").click()
+    
+    },300);
+    
+}
+
+function closeMaisIm(){
+    
+    if(document.querySelector('.hide') != null){
+        if(document.querySelector('.minimized.closed') === null){
+    document.querySelector('.hide').click()}
+    }
 }
 function openModal(){
+    closeMaisIm()
     let open = document.getElementById("popup")
     open.classList.add("active");
     const formulario = document.querySelector('#formulario');
@@ -124,6 +150,8 @@ function openModal(){
             e.target.value = masks[field](e.target.value)
             }, false)
         })
+        
+        
     };
 
     function closeModal(){
