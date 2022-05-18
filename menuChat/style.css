@@ -28,12 +28,12 @@ body{
 } 
 
 /*Botões    */
-.navbar{
+.navbarT12{
     position: relative;
     margin-top: 5px;
 }
 
-.box{
+.boxT12{
     width: 50px;
     height: 50px;
     display: flex;
@@ -63,7 +63,7 @@ body{
 }
 
 
-.box .icon{
+.boxT12 .icon{
     position: absolute;
     width: 40px;
     height: 40px;
@@ -78,25 +78,25 @@ body{
 .nvoipIcon{
  border-radius: 15px;
   box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
-  animation: pulse-orange 2s infinite;
+  animation: pulse-orange 4s  infinite;
 }
 @keyframes pulse-orange {
     0% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 15px rgba(255, 121, 63, 1);
+      transform: scale(0.99);
+      box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
     }
     
     70% {
-      transform: scale(1.2);
-      box-shadow: 0 0  0 20px rgba(255, 121, 63, 0);
+      transform: scale(1.3);
+      box-shadow: 0 0 0 15px rgba(255, 121, 63, 0);
     }
     
     100% {
       transform: scale(1);
-      box-shadow: 0 0 0 15px rgba(255, 121, 63, 0);
+      box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
     }
   }
-.box .icon .baloon{
+.boxT12 .icon .baloon{
     position: relative;
 }
 
@@ -113,23 +113,23 @@ body{
     background-color: rgb(243, 116, 53)
 }
 
-.box:nth-child(4){
+.boxT12:nth-child(4){
     top: 900px;
     position: fixed;
 }
-.box:nth-child(3){
+.boxT12:nth-child(3){
     top: 850px;
     position: fixed;
 }
-.box:nth-child(2){
+.boxT12:nth-child(2){
     top: 800px;
     position: fixed;
 }
-.box:nth-child(1){
+.boxT12:nth-child(1){
     top: 750px;
     position: fixed;
 }
-.box .icon.menu{
+.boxT12 .icon.menu{
     top:15px;
     right:0px;
     margin-right: 0px;
@@ -158,14 +158,14 @@ body{
     left: 1275px;
 }
 
-.box:hover .icon{
+.boxT12:hover .icon{
         color: #fff;
         box-shadow: 0 0 90px rgba(0,0,0,0.26);
     }
 
 /*Botões    -- FIM */
 /*modal */
-.popup{
+.popupFormWpp{
     position: absolute;
     top: -150%;
     left: 50%;
@@ -181,7 +181,7 @@ body{
                 opacity 200ms ease-in-out 0ms,
                 transform 200ms ease-in-out 0ms;
 }
-.popup.active{
+.popupFormWpp.active{
     top:50%;
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.25);
@@ -190,7 +190,7 @@ body{
                 transform 200ms ease-in-out 0ms;
 }
 
-.popup .close-btn {
+.popupFormWpp .close-btn {
     position: absolute;
     top: 10px;
     right:11px;
@@ -202,24 +202,24 @@ body{
     border-radius: 15px;
     cursor: pointer;
 }
-.popup .form h2{
+.popupFormWpp .form h2{
     text-align: center;
     color: #222;
     margin: 10px 0px 20px;
     font-size: 25px;
 }
-.popup .form .form-element{
+.popupFormWpp .form .form-element-popupFormWpp{
     margin: 12px 0px;
 }
-.popup .form .form-element label{
+.popupFormWpp .form .form-element-popupFormWpp label{
     font-size: 15px;
     color: #222;
 }
 h3{
     margin-bottom: 15px;
 }
-.popup .form .form-element input[type="text"],
-.popup .form .form-element input[type="tel"]{
+.popupFormWpp .form .form-element-popupFormWpp input[type="text"],
+.popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
     display: block;
     width: 100%;
     padding: 13px;
@@ -227,7 +227,7 @@ h3{
     border: 1px solid rgb(233, 233, 233);
     border-radius: 10px;
 }
-.popup .form .form-element input[type="checkbox"]{
+.popupFormWpp .form .form-element-popupFormWpp input[type="checkbox"]{
     margin-top: 30px;
     margin-right:5px ;
     border: 1px solid rgb(233, 233, 233);
@@ -237,7 +237,7 @@ p{
     
     font-size: 14px;
 }
-.popup .form .form-element button {
+.popupFormWpp .form .form-element-popupFormWpp button {
     width: 100%;
     height: 40px;
     border: none;
@@ -251,29 +251,29 @@ p{
 /*modal --- FIM*/
 @media only screen and (max-height: 768px){
     /*botões */
-    .box{
+    .boxT12{
         position: fixed;
         left: 94%;
     }
-    .box:nth-child(4){
+    .boxT12:nth-child(4){
         top: 580px;
         position: fixed;
     }
-    .box:nth-child(3){
+    .boxT12:nth-child(3){
         top: 530px;
         position: fixed;
     }
-    .box:nth-child(2){
+    .boxT12:nth-child(2){
         top: 480px;
         position: fixed;
     }
-    .box:nth-child(1){
+    .boxT12:nth-child(1){
         top: 430px;
         position: fixed;
     }
     /*modal */
 
-    .popup{
+    .popupFormWpp{
         position: absolute;
         top: -150%;
         left: 50%;
@@ -289,7 +289,8 @@ p{
                     opacity 200ms ease-in-out 0ms,
                     transform 200ms ease-in-out 0ms;
     }
-    .popup.active{
+   
+    .popupFormWpp.active{
         top:50%;
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.25);
@@ -298,7 +299,7 @@ p{
                     transform 200ms ease-in-out 0ms;
     }
     
-    .popup .close-btn {
+    .popupFormWpp .close-btn {
         position: absolute;
         top: 10px;
         right:11px;
@@ -310,16 +311,16 @@ p{
         border-radius: 15px;
         cursor: pointer;
     }
-    .popup .form h2{
+    .popupFormWpp .form h2{
         text-align: center;
         color: #222;
         margin: 10px 0px 20px;
         font-size: 25px;
     }
-    .popup .form .form-element{
+    .popupFormWpp .form .form-element-popupFormWpp{
         margin: 12px 0px;
     }
-    .popup .form .form-element label{
+    .popupFormWpp .form .form-element-popupFormWpp label{
         font-size: 15px;
         color: #222;
     }
@@ -327,8 +328,8 @@ p{
         margin-bottom: 15px;
         font-size: 13px;
     }
-    .popup .form .form-element input[type="text"],
-    .popup .form .form-element input[type="tel"]{
+    .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
+    .popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
         display: block;
         width: 100%;
         padding: 8px;
@@ -337,13 +338,13 @@ p{
         border-radius: 10px;
         font-size: 11px;
     }
-    .popup .form .form-element input[type="checkbox"]{
+    .popupFormWpp .form .form-element-popupFormWpp input[type="checkbox"]{
         margin-top: 10px;
         margin-right:5px ;
         border: 1px solid rgb(233, 233, 233);
         font-size: 8px;
     }
-    .popup .form .form-element label{
+    .popupFormWpp .form .form-element-popupFormWpp label{
         font-size: 10px;
         position: relative;
         top: -3px;
@@ -351,15 +352,22 @@ p{
     p{   
         font-size: 10px;
     }
-    .popup .form .form-element button {
+    .popupFormWpp .form .form-element-popupFormWpp button {
         width: 100%;
         height: 40px;
         border: none;
         outline: none;
         font-size: 15px;
-        background: #25d366;
+        background: #059405;
         color: #f5f5f5;
-        border-radius: 10px;
+        border-radius: 11px;
+        cursor: pointer;
+    }
+    .popupFormWpp .form .form-element-popupFormWpp button:hover {
+      
+        font-size: 16px;
+        background: #057a05;
+        color: #f5f5f5;
         cursor: pointer;
     }
 
@@ -380,7 +388,7 @@ p{
     right: 25px;
     left: 1275px;
 }
-.box .icon.menu{
+.boxT12 .icon.menu{
     top:15px;
     right:0px;
     margin-right: 0px;

@@ -56,9 +56,7 @@ function clickMaisIm(){
     }
     
 }
-
      
-
 function clickCallme(){
     closeModal()
     closeMaisIm()
@@ -104,7 +102,8 @@ function closeMaisIm(){
 }
 function openModal(){
     closeMaisIm()
-    let open = document.getElementById("popup")
+    if(document.querySelector('.popupFormWpp.active') === null){
+    let open = document.getElementById("popupFormWpp")
     open.classList.add("active");
     const formulario = document.querySelector('#formulario');
     const buttonSubmit = document.querySelector('#submit');
@@ -150,12 +149,15 @@ function openModal(){
             e.target.value = masks[field](e.target.value)
             }, false)
         })
+    } else {
+        closeModal()
+    }
         
         
     };
 
     function closeModal(){
-        let open = document.getElementById("popup")
+        let open = document.getElementById("popupFormWpp")
         open.classList.remove("active");
     }
     function isMobile() {
