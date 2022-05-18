@@ -28,8 +28,9 @@ function handleClick(){
     } else {
         callMe.style.display = "none";
     }
-}
 
+    // wpp.addEventListener('onload')
+}
 
 function clickMaisIm(){
     var elem = document.createElement('script');
@@ -40,21 +41,42 @@ function clickMaisIm(){
     elem.id='maisim';
     elem.charset='utf-8';
     elem.setAttribute('data-token', "75ee4623a9a19e098718a830adabf6e4");
-    elem.setAttribute('data-maximized', true);
+    elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
+    
 
+    
+    
 
     event.preventDefault();
+    let close = document.querySelector('.hide')
+    
+        console.log (close)
 	
 }
-let maisIm = document.querySelector(".minimized.closed")
-if (maisIm != null){
-    console.log(maisIm)
-}
-function clickCallme(){
-}
 
+     
+
+function clickCallme(){
+    const link = document.createElement('link');
+		link.id= 'menu-nvoip';
+		link.href = 'https://nvoipcom.s3-sa-east-1.amazonaws.com/public/callme/dist/main.css';
+        link.media='screen';
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+    
+    document.head.append(link)
+    const body = document.getElementsByTagName('body')
+    const script = document.createElement('script');
+    script.src = "https://nvoipcom.s3.sa-east-1.amazonaws.com/public/callme/dist2/bundle.js";
+    let windowScript  = document.createElement('script')
+    
+
+    
+    document.body.append(script,windowScript )
+   
+}
 function openModal(){
     let open = document.getElementById("popup")
     open.classList.add("active");

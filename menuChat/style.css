@@ -7,19 +7,25 @@ body{
     
     font-family: 'Raleway', sans-serif;
 }
-/* #bricks-component-XNtZBxMip1MdKyhwoOYMMw-wrapper{
+/* /* #bricks-component-XNtZBxMip1MdKyhwoOYMMw-wrapper{
     display: none;
     margin-left: 950px !important;
-}
-
-#mais-support-widget.closed.minimized{
-}
-._6h2kp91{
-    display: none;
-}
-._6h2kp93{
-    display: none !important;
 } */
+
+#mais-support-widget{
+    position: relative;
+    top:220px !important;
+    left:998px !important;
+}
+.closed.minimized{
+    display: none !important;
+}
+/* ._6h2kp91{
+    display: none;
+} */
+/* ._6h2kp93{
+    display: none !important;
+}  */
 
 /*Botões    */
 .navbar{
@@ -37,6 +43,7 @@ body{
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    
 }
 .box:hover{
     width: 50px;
@@ -216,6 +223,10 @@ p{
 /*modal --- FIM*/
 @media only screen and (max-height: 768px){
     /*botões */
+    .box{
+        position: fixed;
+        left: 94%;
+    }
     .box:nth-child(4){
         top: 580px;
         position: fixed;
