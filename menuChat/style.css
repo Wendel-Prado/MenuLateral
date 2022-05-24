@@ -14,8 +14,8 @@ body{
 
 #mais-support-widget{
     position: relative;
-    top:220px !important;
-    left:996px !important;
+    top:525px !important;
+    left:1552px !important;
 }
 .closed.minimized{
     display: none !important;
@@ -32,7 +32,24 @@ body{
     position: relative;
     margin-top: 5px;
 }
-
+.boxTxtT12{
+    width: 195px;
+    height: 5px;
+    border-radius: 0.3rem;
+    position: fixed;
+    bottom: 26px;
+    right: 73px;
+    color: #000;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: row;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9990;
+}
 .boxT12{
     width: 50px;
     height: 50px;
@@ -43,7 +60,7 @@ body{
     position: initial;
     overflow: hidden;
     cursor: pointer;
-    
+    right: 13px;
 }
 
 
@@ -112,21 +129,16 @@ body{
 .menu{
     background-color: rgb(243, 116, 53)
 }
-
-.boxT12:nth-child(4){
-    top: 900px;
-    position: fixed;
-}
 .boxT12:nth-child(3){
-    top: 850px;
+    top: 834px;
     position: fixed;
 }
 .boxT12:nth-child(2){
-    top: 800px;
+    top: 786px;
     position: fixed;
 }
 .boxT12:nth-child(1){
-    top: 750px;
+    top: 738px;
     position: fixed;
 }
 .boxT12 .icon.menu{
@@ -142,6 +154,7 @@ body{
     box-shadow:  0px 0 0 50px #d6711f7e;
 }
 #boxNvoip{
+    position: fixed;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -152,10 +165,10 @@ body{
     width: 81px;
     margin-bottom: 0px;
     height: 77px;
-    top: 580px;
+    top: 881px;
     bottom: 0px;
     right: 25px;
-    left: 1275px;
+    left: 1827px;
 }
 
 .boxT12:hover .icon{
@@ -171,15 +184,13 @@ body{
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-    width: 380px;
-    height: 410px;
-    padding:  20px 30px;
+    width: 363px;
+    height: 452px;
+    padding: 27px 30px;
     background: #fff;
-    box-shadow:  2px 2px 5px 5px rgba(0,0,0,0.15);
-    border-radius:10px;
-    transition: top 0ms ease-in-out 200ms,
-                opacity 200ms ease-in-out 0ms,
-                transform 200ms ease-in-out 0ms;
+    box-shadow: 2px 2px 5px 5px rgb(0 0 0 / 15%);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
 }
 .popupFormWpp.active{
     top:50%;
@@ -251,6 +262,27 @@ p{
 /*modal --- FIM*/
 @media only screen and (max-height: 768px){
     /*botões */
+    #boxNvoip{
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        width: 81px;
+        margin-bottom: 0px;
+        height: 77px;
+        top: 580px;
+        bottom: 0px;
+        right: 25px;
+        left: 1275px;
+    }
+    .boxT12 .icon.menu{
+        top:15px;
+        right:0px;
+        margin-right: 0px;
+        left: 25px;}
     .boxT12{
         position: fixed;
         left: 94%;
@@ -372,24 +404,3 @@ p{
     }
 
 }
-#boxNvoip{
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    width: 81px;
-    margin-bottom: 0px;
-    height: 77px;
-    top: 580px;
-    bottom: 0px;
-    right: 25px;
-    left: 1275px;
-}
-.boxT12 .icon.menu{
-    top:15px;
-    right:0px;
-    margin-right: 0px;
-    left: 25px;}

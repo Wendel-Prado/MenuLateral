@@ -29,7 +29,6 @@ function handleClick(){
         callMe.style.display = "none";
     }
 
-    // wpp.addEventListener('onload')
 }
 
 function clickMaisIm(){
@@ -170,6 +169,19 @@ function openModal(){
             if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
         return false;
     }
+
+var url_atual = window.location.href;
+let ip = '';
+   
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", 'https://api.ipify.org?format=json');
+xmlhttp.send();
+xmlhttp.onload = function(e) {
+ ip = xmlhttp.response;
+}
+
+
+    
 // const saveForm = useCallback (async () => {
 //     await api
 //         .post("/formDb", {
