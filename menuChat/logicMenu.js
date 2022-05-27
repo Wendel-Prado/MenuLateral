@@ -3,7 +3,7 @@
  *
  * @author Wendel Prado <wendel.prado@nvoip.com.br>
  * @date 12/05/2022
- * @version 12/05/2022
+ * @version 27/05/2022
  */
 
  'use strict';
@@ -105,24 +105,27 @@ function openModal(){
     let open = document.getElementById("popupFormWpp")
     open.classList.add("active");
     const formulario = document.querySelector('#formulario');
-    const buttonSubmit = document.querySelector('#submit');
+    const buttonSubmit = document.querySelector('#submit3');
     const urlDesktop = 'https://web.whatsapp.com/';
     const urlMobile = 'whatsapp://';
     const telefone = '551141186267';
 
-    formulario.addEventListener('submit', (event) => {
+    buttonSubmit.addEventListener('click', (event) => {
         event.preventDefault()
         buttonSubmit.disabled = true
-        const data = new FormData(event.target);
-        const teste = Object.fromEntries(data.entries());
-        teste.topics = data.getAll("topics");
+        // const data = new FormData(event.target);
+        // const teste = Object.fromEntries(data.entries());
+        // teste.topics = data.getAll("topics");
         setTimeout(() => {
             let nome = document.querySelector('#nome').value
             let celular = document.querySelector('#telefone').value
             let email = document.querySelector('#email').value
-        //     document.querySelector("#rd-text_field-lPgGDLCONuYA1j31y6Fl4Q").value = nome
-        //     document.querySelector("#rd-phone_field-gkJfI91Ixmun-bPXKf7Cyg").value = "+55 " + celular
-        //     document.querySelector("#rd-email_field-zDp4PJd28U3WZWW92N9qDw").value = email
+            let mensagem = 'send?phone=' + telefone + '&text=Gostaria de conversar mais sobre como a Nvoip pode ajudar minha empresa%0AMeu Nome é ' + nome + '%0AMeu telefone para contato:%0A' + celular + '%0AMeu email:%0A' + email + ''
+            if(isMobile()) {
+                window.open(urlMobile + mensagem, '_blank')
+            }else{
+                window.open(urlDesktop + mensagem, '_blank')
+            }
             
             
 
@@ -170,15 +173,15 @@ function openModal(){
         return false;
     }
 
-var url_atual = window.location.href;
-let ip = '';
+// var url_atual = window.location.href;
+// let ip = '';
    
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", 'https://api.ipify.org?format=json');
-xmlhttp.send();
-xmlhttp.onload = function(e) {
- ip = xmlhttp.response;
-}
+// var xmlhttp = new XMLHttpRequest();
+// xmlhttp.open("GET", 'https://api.ipify.org?format=json');
+// xmlhttp.send();
+// xmlhttp.onload = function(e) {
+//  ip = xmlhttp.response;
+// }
 
 
     

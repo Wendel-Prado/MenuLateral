@@ -11,11 +11,20 @@ body{
     display: none;
     margin-left: 950px !important;
 } */
-
+#mais-support-widget.closed.maximized.compact{
+    display: none;
+}
 #mais-support-widget{
-    position: relative;
-    top:525px !important;
-    left:1552px !important;
+    
+    z-index: 9990 !important;
+    position: fixed !important;
+    bottom: 70px !important;
+    right: 81px !important;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    z-index: 9990 !important;
 }
 .closed.minimized{
     display: none !important;
@@ -37,8 +46,8 @@ body{
     height: 5px;
     border-radius: 0.3rem;
     position: fixed;
-    bottom: 26px;
-    right: 73px;
+    bottom: 32px;
+    right: 90px;
     color: #000;
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -50,18 +59,7 @@ body{
     box-sizing: border-box;
     z-index: 9990;
 }
-.boxT12{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    margin: 0.6rem;
-    position: initial;
-    overflow: hidden;
-    cursor: pointer;
-    right: 13px;
-}
+
 
 
 .nvoipIcon{
@@ -130,22 +128,45 @@ body{
     background-color: rgb(243, 116, 53)
 }
 .boxT12:nth-child(3){
-    top: 834px;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
     position: fixed;
+    bottom: 70px;
+    right: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 .boxT12:nth-child(2){
-    top: 786px;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
     position: fixed;
+    bottom: 116px;
+    right: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 .boxT12:nth-child(1){
-    top: 738px;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
     position: fixed;
+    bottom: 165px;
+    right: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
-.boxT12 .icon.menu{
-    top:15px;
-    right:0px;
-    margin-right: 0px;
-    left: 25px;}
+
 .icon.whatsapp:hover{
     background: #059405;
     }
@@ -154,21 +175,17 @@ body{
     box-shadow:  0px 0 0 50px #d6711f7e;
 }
 #boxNvoip{
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
     position: fixed;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-    width: 81px;
-    margin-bottom: 0px;
-    height: 77px;
-    top: 881px;
-    bottom: 0px;
-    right: 25px;
-    left: 1827px;
+    bottom: 26px;
+    right: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 
 .boxT12:hover .icon{
@@ -191,10 +208,13 @@ body{
     box-shadow: 2px 2px 5px 5px rgb(0 0 0 / 15%);
     border-radius: 10px;
     transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+    z-index: 9990 !important;
 }
 .popupFormWpp.active{
     top:50%;
+    position: fixed;
     opacity: 1;
+    z-index: 9990!important;
     transform: translate(-50%, -50%) scale(1.25);
     transition: top 0ms ease-in-out 0ms,
                 opacity 200ms ease-in-out 0ms,
@@ -226,8 +246,9 @@ body{
     font-size: 15px;
     color: #222;
 }
-h3{
-    margin-bottom: 15px;
+#titleWPP{
+    margin-bottom: -8px;
+    font-size: 13px;
 }
 .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
 .popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
@@ -248,7 +269,7 @@ p{
     
     font-size: 14px;
 }
-.popupFormWpp .form .form-element-popupFormWpp button {
+.popupFormWpp .form .form-element-popupFormWpp #submit3 {
     width: 100%;
     height: 40px;
     border: none;
@@ -258,50 +279,68 @@ p{
     color: #f5f5f5;
     border-radius: 10px;
     cursor: pointer;
+    padding: 8px !important;
+        padding-left: 88px !important;
 }
 /*modal --- FIM*/
-@media only screen and (max-height: 768px){
+@media only screen and (max-height: 700px){
     /*botões */
+    
     #boxNvoip{
-        margin-top: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
-        padding-left: 0px;
-        padding-bottom: 0px;
-        padding-right: 0px;
-        padding-top: 0px;
-        width: 81px;
-        margin-bottom: 0px;
-        height: 77px;
-        top: 580px;
-        bottom: 0px;
-        right: 25px;
-        left: 1275px;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 26px;
+        right: 13px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 9990;
     }
-    .boxT12 .icon.menu{
-        top:15px;
-        right:0px;
-        margin-right: 0px;
-        left: 25px;}
+   
     .boxT12{
         position: fixed;
         left: 94%;
     }
-    .boxT12:nth-child(4){
-        top: 580px;
-        position: fixed;
-    }
     .boxT12:nth-child(3){
-        top: 530px;
+        width: 50px;
+        height: 50px;
+        z-index: 9990;
         position: fixed;
+        bottom: 70px;
+        right: 13px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 9990;
     }
     .boxT12:nth-child(2){
-        top: 480px;
+        width: 50px;
+        height: 50px;
+        z-index: 9990;
         position: fixed;
+        bottom: 116px;
+        right: 13px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 9990;
     }
     .boxT12:nth-child(1){
-        top: 430px;
+        width: 50px;
+        height: 50px;
+        z-index: 9990;
         position: fixed;
+        bottom: 165px;
+        right: 13px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 9990;
     }
     /*modal */
 
@@ -324,6 +363,8 @@ p{
    
     .popupFormWpp.active{
         top:50%;
+        position: fixed;
+        z-index: 9990 !important;
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.25);
         transition: top 0ms ease-in-out 0ms,
@@ -356,9 +397,8 @@ p{
         font-size: 15px;
         color: #222;
     }
-    h3{
-        margin-bottom: 15px;
-        font-size: 13px;
+    #titleWPP{
+        margin-bottom: -8px;
     }
     .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
     .popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
@@ -384,7 +424,7 @@ p{
     p{   
         font-size: 10px;
     }
-    .popupFormWpp .form .form-element-popupFormWpp button {
+    .popupFormWpp .form .form-element-popupFormWpp #submit3 {
         width: 100%;
         height: 40px;
         border: none;
@@ -394,8 +434,10 @@ p{
         color: #f5f5f5;
         border-radius: 11px;
         cursor: pointer;
+        padding: 8px !important;
+        padding-left: 52px !important;
     }
-    .popupFormWpp .form .form-element-popupFormWpp button:hover {
+    .popupFormWpp .form .form-element-popupFormWpp #submit3:hover {
       
         font-size: 16px;
         background: #057a05;
@@ -404,3 +446,68 @@ p{
     }
 
 }
+
+@media only screen and (min-width: 1400px){
+    #mais-support-widget{
+        z-index: 9990 !important;
+        position: fixed !important;
+        bottom: 64px !important;
+        right: 65px !important;
+        display: flex ;
+        flex-direction: row !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        z-index: 9990 !important;
+    }
+    .boxTxtT12{
+        width: 195px;
+        height: 5px;
+        border-radius: 0.3rem;
+        position: fixed;
+        bottom: 32px;
+        right: 72px;
+        color: #000;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        display: flex;
+        flex-direction: row;
+        font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 9990;
+    }
+}
+@media only screen and (max-width:1500px){  
+    #mais-support-widget{
+    z-index: 9990 !important;
+    position: fixed !important;
+    bottom: 64px !important;
+    right: 93px !important;
+    display: flex ;
+    flex-direction: row !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    z-index: 9990 !important;
+}
+.boxTxtT12{
+    width: 195px;
+    height: 5px;
+    border-radius: 0.3rem;
+    position: fixed;
+    bottom: 32px;
+    right: 93px;
+    color: #000;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: row;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9990;
+}
+}
+    
+

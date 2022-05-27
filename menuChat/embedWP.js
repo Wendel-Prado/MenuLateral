@@ -44,7 +44,7 @@
 		const chatNvoipElement = document.getElementsByClassName('chat-menu-Nvoip');
 		const link = document.createElement('link');
 		link.id= 'menu-nvoip'
-		link.href = 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/style.css';
+		link.href = 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/styleWP.css';
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
 		
