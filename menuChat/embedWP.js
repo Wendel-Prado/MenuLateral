@@ -19,6 +19,7 @@
 	// params: {},
 
 	prepare: function() {
+
 		const self = this;
 		const body = document.getElementsByTagName('body');
 
@@ -40,6 +41,7 @@
 	},
 
 	init: function() {
+		console.log(window)
 		const self = this;
 		const chatNvoipElement = document.getElementsByClassName('chat-menu-Nvoip');
 		const link = document.createElement('link');

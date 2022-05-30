@@ -1,16 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    
-    font-family: 'Raleway', sans-serif;
-}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 /* /* #bricks-component-XNtZBxMip1MdKyhwoOYMMw-wrapper{
     display: none;
     margin-left: 950px !important;
 } */
+.chat-nvoip-menu{
+    margin: 35px;
+    padding: 0;
+}
 #mais-support-widget.closed.maximized.compact{
     display: none;
 }
@@ -42,11 +40,11 @@ body{
     margin-top: 5px;
 }
 .boxTxtT12{
-    width: 195px;
-    height: 5px;
+    width: 240px;
+    height: 55px;
     border-radius: 0.3rem;
     position: fixed;
-    bottom: 32px;
+    bottom: 23px;
     right: 90px;
     color: #000;
     background-color: #ffffff;
@@ -63,51 +61,63 @@ body{
 
 
 .nvoipIcon{
-    max-width: 25px;
+    width: 25px;
     margin-top: 3px;
     margin-left: 1px;
 }
 .callmeIcon{
-    max-width: 18px;
+    width: 25px;
     margin-top: 2px;
     filter: invert(1);
 }
 .maisImIcon{
-    max-width: 18px;
+    width: 26px;
     margin-top: 2px
 }
 
 
-.boxT12 .icon{
+.boxT12 .menu{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     border-radius: 50%;
     margin-right: 10px;
-    transition: all .4s ease;
+}
+
+.boxT12 .icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 6px;
 }
 .nvoipIcon{
- border-radius: 15px;
+ border-radius: 40px;
   box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
   animation: pulse-orange 4s  infinite;
 }
 @keyframes pulse-orange {
     0% {
-      transform: scale(0.99);
+      transform: scale(1.3);
       box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
     }
     
     70% {
-      transform: scale(1.3);
-      box-shadow: 0 0 0 15px rgba(255, 121, 63, 0);
+      transform: scale(1.5);
+      box-shadow: 0 0 0 20px rgba(255, 121, 63, 0);
     }
     
     100% {
-      transform: scale(1);
+      transform: scale(1.3);
       box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
     }
   }
@@ -133,9 +143,10 @@ body{
     z-index: 9990;
     position: fixed;
     bottom: 70px;
-    right: 13px;
+    right: 26px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 15px;
     align-items: center;
     box-sizing: border-box;
     z-index: 9990;
@@ -146,7 +157,8 @@ body{
     z-index: 9990;
     position: fixed;
     bottom: 116px;
-    right: 13px;
+    right: 26px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -159,7 +171,8 @@ body{
     z-index: 9990;
     position: fixed;
     bottom: 165px;
-    right: 13px;
+    margin-bottom: 30px;
+    right: 26px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -179,8 +192,8 @@ body{
     height: 50px;
     z-index: 9990;
     position: fixed;
-    bottom: 26px;
-    right: 13px;
+    bottom: 25px;
+    right: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -201,8 +214,8 @@ body{
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-    width: 363px;
-    height: 452px;
+    width: 280px;
+    height: 351px;
     padding: 27px 30px;
     background: #fff;
     box-shadow: 2px 2px 5px 5px rgb(0 0 0 / 15%);
@@ -238,276 +251,60 @@ body{
     color: #222;
     margin: 10px 0px 20px;
     font-size: 25px;
+    font-family: 'Raleway';
 }
 .popupFormWpp .form .form-element-popupFormWpp{
-    margin: 12px 0px;
 }
 .popupFormWpp .form .form-element-popupFormWpp label{
-    font-size: 15px;
+    font-size: 83%;
     color: #222;
+    font-family: 'Raleway';
 }
 #titleWPP{
-    margin-bottom: -8px;
-    font-size: 13px;
+    margin-bottom: 16px;
+    font-size: 100%;
+    font-family: 'Raleway';
+}
+.popupFormWpp .form .form-element-popupFormWpp input[type="text"]{
+    margin-bottom: 0.3rem;
 }
 .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
 .popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
     display: block;
-    width: 100%;
-    padding: 13px;
+    width: 92%;
+    padding: 0.6rem;
+    
     outline: none;
     border: 1px solid rgb(233, 233, 233);
     border-radius: 10px;
 }
 .popupFormWpp .form .form-element-popupFormWpp input[type="checkbox"]{
-    margin-top: 30px;
-    margin-right:5px ;
+    margin-top: 0.4rem;
     border: 1px solid rgb(233, 233, 233);
     border-radius: 10px;
 }
-p{  
-    
-    font-size: 14px;
+.termsWPP{  
+    margin-top: 6%;
+    margin-bottom: 10%;
+    font-family: 'Raleway';
+    font-size: 90%;
 }
 .popupFormWpp .form .form-element-popupFormWpp #submit3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 40px;
     border: none;
     outline: none;
-    font-size: 15px;
+    font-size: 100%;
     background: #25d366;
     color: #f5f5f5;
     border-radius: 10px;
     cursor: pointer;
-    padding: 8px !important;
-        padding-left: 88px !important;
+    font-family: 'Raleway';
+    
 }
 /*modal --- FIM*/
-@media only screen and (max-height: 700px){
-    /*botões */
-    
-    #boxNvoip{
-        width: 50px;
-        height: 50px;
-        position: fixed;
-        bottom: 26px;
-        right: 13px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        box-sizing: border-box;
-        z-index: 9990;
-    }
-   
-    .boxT12{
-        position: fixed;
-        left: 94%;
-    }
-    .boxT12:nth-child(3){
-        width: 50px;
-        height: 50px;
-        z-index: 9990;
-        position: fixed;
-        bottom: 70px;
-        right: 13px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        box-sizing: border-box;
-        z-index: 9990;
-    }
-    .boxT12:nth-child(2){
-        width: 50px;
-        height: 50px;
-        z-index: 9990;
-        position: fixed;
-        bottom: 116px;
-        right: 13px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        box-sizing: border-box;
-        z-index: 9990;
-    }
-    .boxT12:nth-child(1){
-        width: 50px;
-        height: 50px;
-        z-index: 9990;
-        position: fixed;
-        bottom: 165px;
-        right: 13px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        box-sizing: border-box;
-        z-index: 9990;
-    }
-    /*modal */
-
-    .popupFormWpp{
-        position: absolute;
-        top: -150%;
-        left: 50%;
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1.25);
-        width: 280px;
-        height: 340px;
-        padding:  20px 30px;
-        background: #fff;
-        box-shadow:  2px 2px 5px 5px rgba(0,0,0,0.15);
-        border-radius:10px;
-        transition: top 0ms ease-in-out 200ms,
-                    opacity 200ms ease-in-out 0ms,
-                    transform 200ms ease-in-out 0ms;
-    }
-   
-    .popupFormWpp.active{
-        top:50%;
-        position: fixed;
-        z-index: 9990 !important;
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.25);
-        transition: top 0ms ease-in-out 0ms,
-                    opacity 200ms ease-in-out 0ms,
-                    transform 200ms ease-in-out 0ms;
-    }
-    
-    .popupFormWpp .close-btn {
-        position: absolute;
-        top: 10px;
-        right:11px;
-        width: 15px;
-        height: 15px;
-        color: orange;
-        text-align: center;
-        line-height: 16px;
-        border-radius: 15px;
-        cursor: pointer;
-    }
-    .popupFormWpp .form h2{
-        text-align: center;
-        color: #222;
-        margin: 10px 0px 20px;
-        font-size: 25px;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp{
-        margin: 12px 0px;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp label{
-        font-size: 15px;
-        color: #222;
-    }
-    #titleWPP{
-        margin-bottom: -8px;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
-    .popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
-        display: block;
-        width: 100%;
-        padding: 8px;
-        outline: none;
-        border: 1px solid rgb(233, 233, 233);
-        border-radius: 10px;
-        font-size: 11px;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp input[type="checkbox"]{
-        margin-top: 10px;
-        margin-right:5px ;
-        border: 1px solid rgb(233, 233, 233);
-        font-size: 8px;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp label{
-        font-size: 10px;
-        position: relative;
-        top: -3px;
-    }
-    p{   
-        font-size: 10px;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp #submit3 {
-        width: 100%;
-        height: 40px;
-        border: none;
-        outline: none;
-        font-size: 15px;
-        background: #059405;
-        color: #f5f5f5;
-        border-radius: 11px;
-        cursor: pointer;
-        padding: 8px !important;
-        padding-left: 52px !important;
-    }
-    .popupFormWpp .form .form-element-popupFormWpp #submit3:hover {
-      
-        font-size: 16px;
-        background: #057a05;
-        color: #f5f5f5;
-        cursor: pointer;
-    }
-
-}
-
-@media only screen and (min-width: 1400px){
-    #mais-support-widget{
-        z-index: 9990 !important;
-        position: fixed !important;
-        bottom: 64px !important;
-        right: 65px !important;
-        display: flex ;
-        flex-direction: row !important;
-        align-items: center !important;
-        box-sizing: border-box !important;
-        z-index: 9990 !important;
-    }
-    .boxTxtT12{
-        width: 195px;
-        height: 5px;
-        border-radius: 0.3rem;
-        position: fixed;
-        bottom: 32px;
-        right: 72px;
-        color: #000;
-        background-color: #ffffff;
-        border: 1px solid #dddddd;
-        display: flex;
-        flex-direction: row;
-        font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-        align-items: center;
-        padding: 20px;
-        box-sizing: border-box;
-        z-index: 9990;
-    }
-}
-@media only screen and (max-width:1500px){  
-    #mais-support-widget{
-    z-index: 9990 !important;
-    position: fixed !important;
-    bottom: 64px !important;
-    right: 93px !important;
-    display: flex ;
-    flex-direction: row !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-    z-index: 9990 !important;
-}
-.boxTxtT12{
-    width: 195px;
-    height: 5px;
-    border-radius: 0.3rem;
-    position: fixed;
-    bottom: 32px;
-    right: 93px;
-    color: #000;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    display: flex;
-    flex-direction: row;
-    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 9990;
-}
-}
-    
 

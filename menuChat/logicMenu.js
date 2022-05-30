@@ -9,8 +9,8 @@
  'use strict';
 
 
-
 function handleClick(){
+    
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
     var callMe = document.getElementById("div-callMe")
@@ -23,12 +23,20 @@ function handleClick(){
         maisIm.style.display = "block";
     } else {
         maisIm.style.display = "none";
-    }if ( callMe.style.display === "none" ){
+    }
+    if ( callMe.style.display === "none" ){
         callMe.style.display = "block";
     } else {
         callMe.style.display = "none";
-    }
+    } 
+    
 
+}
+function hideBoxTxt(){
+    let boxTxt = document.querySelector(".boxTxtT12")
+    if (boxTxt.style.display === "block"){
+        boxTxt.style.display = "none"
+    } 
 }
 
 function clickMaisIm(){
@@ -41,10 +49,10 @@ function clickMaisIm(){
     var script = document.getElementsByTagName('script')[0];
 
     elem.async=!0;
-    elem.src="https://app.mais.im/support/assets/js/core/embed.js";
+    elem.src="https://beta-chat.nvoip.com.br/support/assets/js/core/embed.js";
     elem.id='maisim';
     elem.charset='utf-8';
-    elem.setAttribute('data-token', "75ee4623a9a19e098718a830adabf6e4");
+    elem.setAttribute('data-token', "faa192e0fcc4993193b30dc38efd5d35");
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
@@ -53,7 +61,8 @@ function clickMaisIm(){
         document.querySelector('#mais-support-header').click()
         
     }
-    
+    handleClick()
+    hideBoxTxt()
 }
      
 function clickCallme(){
@@ -89,7 +98,8 @@ function clickCallme(){
         document.querySelector("._6h2kp91").click()
     
     },300);
-    
+    handleClick()
+    hideBoxTxt()
 }
 
 function closeMaisIm(){
@@ -132,8 +142,8 @@ function openModal(){
             buttonSubmit.disabled = false
             document.getElementsByClassName("box").click()
         }, 300);
-        
-    });
+       
+    } );
         const masks = {
         phone (value) {
             return value
@@ -151,6 +161,8 @@ function openModal(){
             e.target.value = masks[field](e.target.value)
             }, false)
         })
+        handleClick()
+        hideBoxTxt()
     } else {
         closeModal()
     }

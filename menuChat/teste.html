@@ -14,19 +14,17 @@
             win.top.chatNvoip || (function() {
                 element = doc.createElement(scriptTag);
                 scriptTag = doc.getElementsByTagName(scriptTag)[0];
-                element.src = 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/embed.js';
+                element.setAttribute('iswordpress',false)
+                element.src = 'embed.js';
                 element.id = 'chatNvoip';
                 element.charset = 'utf-8';
                 scriptTag.parentNode.insertBefore(element, scriptTag);
             })()
         })
-    })(window, document, 'script', 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/embed.js');
+    })(window, document, 'script', 'embed.js');
     
     </script>
     
-
-       
-
 </body>
 
 </html>
