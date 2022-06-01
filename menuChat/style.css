@@ -12,6 +12,9 @@
 #mais-support-widget.closed.maximized.compact{
     display: none;
 }
+#mais-support-widget #mais-support-app #mais-support-wrapper #mais-support-header a.hide {
+    right: 15px;
+}
 #mais-support-widget{
     
     z-index: 9990 !important;
@@ -37,17 +40,18 @@
     margin-top: 5px;
 }
 .boxTxtT12{
-    width: 240px;
-    height: 55px;
+    width: 210px;
+    height: 19px;
     border-radius: 0.3rem;
     position: fixed;
-    bottom: 23px;
-    right: 90px;
+    bottom: 29px;
+    right: 85px;
     color: #000;
     background-color: #ffffff;
     border: 1px solid #dddddd;
     display: flex;
     flex-direction: row;
+    font-size:16px !important;
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     align-items: center;
     padding: 20px;
@@ -211,10 +215,11 @@
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.25);
-    width: 300px;
-    height: 400px;
+    width: 280px !important;
+    height: 365px !important;
     padding: 27px 30px;
     background: #fff;
+    box-sizing: content-box;
     box-shadow: 2px 2px 5px 5px rgb(0 0 0 / 15%);
     border-radius: 10px;
     transition: top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
@@ -247,19 +252,19 @@
     text-align: center;
     color: #222;
     margin: 10px 0px 20px;
-    font-size: 25px;
+    font-size: 25px !important;
     font-family: 'Raleway';
 }
-.popupFormWpp .form .form-element-popupFormWpp{
+.popupFormWpp .form {
 }
 .popupFormWpp .form .form-element-popupFormWpp label{
-    font-size: 83%;
+    font-size: 13px !important;
     color: #222;
     font-family: 'Raleway';
 }
 #titleWPP{
     margin-bottom: 16px;
-    font-size: 100%;
+    font-size: 16px !important;
     font-family: 'Raleway';
 }
 .popupFormWpp .form .form-element-popupFormWpp input[type="text"]{
@@ -284,7 +289,7 @@
     margin-top: 6%;
     margin-bottom: 10%;
     font-family: 'Raleway';
-    font-size: 90%;
+    font-size: 15px !important;
 }
 .popupFormWpp .form .form-element-popupFormWpp #submit3 {
     display: flex;
@@ -295,12 +300,13 @@
     height: 40px;
     border: none;
     outline: none;
-    font-size: 100%;
+    font-size: 16px !important;
     background: #25d366;
     color: #f5f5f5;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Raleway';
+    box-sizing: border-box;
     
 }
 /*modal --- FIM*/

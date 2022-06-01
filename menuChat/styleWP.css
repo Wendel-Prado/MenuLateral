@@ -33,17 +33,18 @@
 
 /*Botões    */
 .boxTxtT12{
-    width: 240px;
-    height: 55px;
+    width: 210px;
+    height: 19px;
     border-radius: 0.3rem;
     position: fixed;
-    bottom: 46px;
-    right: 90px;
+    bottom: 29px;
+    right: 85px;
     color: #000;
     background-color: #ffffff;
     border: 1px solid #dddddd;
     display: flex;
     flex-direction: row;
+    font-size:16px;
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     align-items: center;
     padding: 20px;

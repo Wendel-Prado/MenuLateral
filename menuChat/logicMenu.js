@@ -7,7 +7,7 @@
  */
 
  'use strict';
-
+ 
 
 function handleClick(){
     
@@ -61,7 +61,8 @@ function clickMaisIm(){
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
     hideBoxTxt()
-
+    document.querySelector('.expand').remove()
+    document.querySelector('.hide').addEventListener('click',hideBoxTxt())
     } else if (preventClick !== null){
         document.querySelector('#mais-support-header').click()
         hideBoxTxt()
@@ -123,12 +124,11 @@ function openModal(){
     const urlDesktop = 'https://web.whatsapp.com/';
     const urlMobile = 'whatsapp://';
     const telefone = '551141186267';
+    
     buttonSubmit.addEventListener('click', (event) => {
         event.preventDefault()
         buttonSubmit.disabled = true
-        // const data = new FormData(event.target);
-        // const teste = Object.fromEntries(data.entries());
-        // teste.topics = data.getAll("topics");
+        saveForm()
         setTimeout(() => {
             let nome = document.querySelector('#nome').value
             let celular = document.querySelector('#telefone').value
@@ -139,17 +139,15 @@ function openModal(){
             }else{
                 window.open(urlDesktop + mensagem, '_blank')
             }
-            
-            
-
             buttonSubmit.disabled = false
             document.getElementsByClassName("box").click()
         }, 300);
        
     } );
+
         const masks = {
-        phone (value) {
-            return value
+        phone (celular) {
+            return celular
             .replace(/\D+/g, '')
             .replace(/(\d{2})(\d)/, '($1) $2')
             .replace(/(\d{4})(\d)/, '$1-$2')
@@ -191,26 +189,43 @@ function openModal(){
         return false;
     }
 
-// var url_atual = window.location.href;
-// let ip = '';
+var url_atual = window.location.href;
+let ip = '';
    
-// var xmlhttp = new XMLHttpRequest();
-// xmlhttp.open("GET", 'https://api.ipify.org?format=json');
-// xmlhttp.send();
-// xmlhttp.onload = function(e) {
-//  ip = xmlhttp.response;
-// }
-
-
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", 'https://api.ipify.org?format=json');
+xmlhttp.send();
+xmlhttp.onload = function(e) {
+ ip = xmlhttp.response;
+}
     
-// const saveForm = useCallback (async () => {
-//     await api
-//         .post("/formDb", {
-//             name,
-//             email,
-//             phone,
-//         })
-// })
+function saveForm() {
+    let nome = document.querySelector('#nome').value
+    let celular = document.querySelector('#telefone').value
+    let email = document.querySelector('#email').value
+    let canReceiveCalls = document.querySelector('#confirm').checked
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify({
+      "hash": "da580c402098bf8fa907b067720a36566249f94b7c51b45b5a348212daee7174",
+      "name": nome,
+      "email": email,
+      "telephone": celular,
+      "ip":JSON.parse(ip).ip,
+      "canReceiveCalls": canReceiveCalls,
+      "url": url_atual,
+    });
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    fetch("https://api.nvoip.com.br/v2/saveInformations", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+}
 
 
 
