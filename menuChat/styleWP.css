@@ -32,73 +32,81 @@
 } 
 
 /*Botões    */
-.navbarT12{
-    position: relative!important;
-    margin-top: 5px!important;
-}
 .boxTxtT12{
-    width: 195px!important;
-    height: 5px!important;
-    border-radius: 0.3rem!important;
-    position: fixed!important;
-    bottom: 32px!important;
-    right: 90px!important;
-    color: #000!important;
-    background-color: #ffffff!important;
-    border: 1px solid #dddddd!important;
+    width: 240px;
+    height: 55px;
+    border-radius: 0.3rem;
+    position: fixed;
+    bottom: 46px;
+    right: 90px;
+    color: #000;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
     display: flex;
-    flex-direction: row!important;
+    flex-direction: row;
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    align-items: center!important;
-    padding: 20px!important;
-    box-sizing: border-box!important;
-    z-index: 9990!important;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 
 
 
 .nvoipIcon{
-    max-width: 25px!important;
-    margin-top: 3px!important;
-    margin-left: 1px!important;
+    width: 40px;
+    margin-top: 8%;
+    margin-left: 0px;
 }
 .callmeIcon{
-    max-width: 18px!important;
-    margin-top: 2px!important;
-    filter: invert(1)!important;
+    width: 25px;
+    margin-top: 2px;
+    filter: invert(1);
 }
 .maisImIcon{
-    max-width: 18px!important;
-    margin-top: 2px!important;
+    width: 26px;
+    margin-top: 2px
 }
 
+
+.boxT12 .menuT12{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 .boxT12 .icon{
-    position: absolute!important;
-    width: 40px!important;
-    height: 40px!important;
+    position: absolute;
+    width: 50px;
+    height: 50px;
     display: flex;
-    justify-content: center!important;
-    align-items: center!important;
-    color: #fff!important;
-    border-radius: 50%!important;
-    margin-right: 10px!important;
-    transition: all .4s ease;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 6px;
 }
 .nvoipIcon{
- border-radius: 15px;
+ border-radius: 40px;
   box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
   animation: pulse-orange 4s  infinite;
 }
 @keyframes pulse-orange {
     0% {
-      transform: scale(0.99);
+      transform: scale(1);
       box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
     }
     
     70% {
-      transform: scale(1.3);
-      box-shadow: 0 0 0 15px rgba(255, 121, 63, 0);
+      transform: scale(1.2);
+      box-shadow: 0 0 0 20px rgba(255, 121, 63, 0);
     }
     
     100% {
@@ -107,85 +115,88 @@
     }
   }
 .boxT12 .icon .baloon{
-    position: relative!important;
+    position: relative;
 }
 
 .whatsapp{
-    background-color: #07be07!important;
+    background-color: #07be07;
 }
 .maisIm{
-    background-color: rgb(243, 116, 53)!important;
+    background-color: rgb(243, 116, 53)
 }
 .callMe{
-    background-color: rgb(243, 116, 53)!important;
+    background-color: rgb(243, 116, 53)
 }
-.menu{
-    background-color: rgb(243, 116, 53) !important;
+.menuT12{
+    background-color: rgb(243, 116, 53)
 }
 .boxT12:nth-child(3){
-    width: 50px!important;
-    height: 50px!important;
-    z-index: 9990!important;
-    position: fixed!important;
-    bottom: 70px!important;
-    right: 13px!important;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
+    position: fixed;
+    bottom: 100px;
+    right: 26px;
     display: flex;
-    flex-direction: row!important;
-    align-items: center!important;
-    box-sizing: border-box!important;
-    z-index: 9990!important;
+    flex-direction: row;
+    margin-bottom: 15px;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 .boxT12:nth-child(2){
-    width: 50px!important;
-    height: 50px!important;
-    z-index: 9990!important;
-    position: fixed!important;
-    bottom: 116px!important;
-    right: 13px!important;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
+    position: fixed;
+    bottom: 145px;
+    right: 26px;
+    margin-bottom: 25px;
     display: flex;
-    flex-direction: row!important;
-    align-items: center!important;
-    box-sizing: border-box!important;
-    z-index: 9990!important;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 .boxT12:nth-child(1){
-    width: 50px!important;
-    height: 50px!important;
-    z-index: 9990!important;
-    position: fixed!important;
-    bottom: 165px!important;
-    right: 13px!important;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
+    position: fixed;
+    bottom: 195px;
+    margin-bottom: 30px;
+    right: 26px;
     display: flex;
-    flex-direction: row!important;
-    align-items: center!important;
-    box-sizing: border-box!important;
-    z-index: 9990!important;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 
 .icon.whatsapp:hover{
-    background: #059405!important;
+    background: #059405;
     }
 .icon:hover{
-    background: #d65905!important;
-    box-shadow:  0px 0 0 50px #d6711f7e!important;
+    background: #d65905;
+    box-shadow:  0px 0 0 50px #d6711f7e;
 }
 #boxNvoip{
-    width: 50px!important;
-    height: 50px!important;
-    z-index: 9990!important;
-    position: fixed!important;
-    bottom: 26px!important;
-    right: 13px!important;
+    width: 50px;
+    height: 50px;
+    z-index: 9990;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
     display: flex;
-    flex-direction: row!important;
-    align-items: center!important;
-    box-sizing: border-box!important;
-    z-index: 9990!important;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 9990;
 }
 
 .boxT12:hover .icon{
-        color: #fff!important;
-        box-shadow: 0 0 90px rgba(0,0,0,0.26)!important;
+        color: #fff;
+        box-shadow: 0 0 90px rgba(0,0,0,0.26);
     }
 
 /*Botões    -- FIM */
@@ -282,64 +293,7 @@ p{
 }
 /*modal --- FIM*/
 @media only screen and (max-height: 700px){
-    /*botões */
     
-    #boxNvoip{
-        width: 50px!important;
-        height: 50px!important;
-        position: fixed!important;
-        bottom: 26px!important;
-        right: 13px!important;
-        display: flex;
-        flex-direction: row!important;
-        align-items: center!important;
-        box-sizing: border-box!important;
-        z-index: 9990!important;
-    }
-   
-    .boxT12{
-        position: fixed!important;
-        left: 94%!important;
-    }
-    .boxT12:nth-child(3){
-        width: 50px!important;
-        height: 50px!important;
-        z-index: 9990!important;
-        position: fixed!important;
-        bottom: 70px!important;
-        right: 13px!important;
-        display: flex;
-        flex-direction: row!important;
-        align-items: center!important;
-        box-sizing: border-box!important;
-        z-index: 9990!important;
-    }
-    .boxT12:nth-child(2){
-        width: 50px!important;
-        height: 50px!important;
-        z-index: 9990!important;
-        position: fixed!important;
-        bottom: 116px!important;
-        right: 13px!important;
-        display: flex;
-        flex-direction: row!important;
-        align-items: center!important;
-        box-sizing: border-box!important;
-        z-index: 9990!important;
-    }
-    .boxT12:nth-child(1){
-        width: 50px!important;
-        height: 50px!important;
-        z-index: 9990!important;
-        position: fixed!important;
-        bottom: 165px!important;
-        right: 13px!important;
-        display: flex;
-        flex-direction: row!important;
-        align-items: center!important;
-        box-sizing: border-box!important;
-        z-index: 9990!important;
-    }
     /*modal */
 
     .popupFormWpp{
@@ -474,7 +428,7 @@ p{
         box-sizing: border-box !important;
         z-index: 9990 !important;
     }
-    .boxTxtT12{
+    /* .boxTxtT12{
         width: 195px !important;
         height: 5px !important;
         border-radius: 0.3rem !important;
@@ -491,7 +445,7 @@ p{
         padding: 20px !important;
         box-sizing: border-box !important;
         z-index: 9990 !important;
-    }
+    } */
 }
 @media only screen and (max-width:1500px){  
     #mais-support-widget{
@@ -505,7 +459,8 @@ p{
     box-sizing: border-box !important;
     z-index: 9990 !important;
 }
-.boxTxtT12{
+}
+/* .boxTxtT12{
     width: 195px !important;
     height: 5px !important;
     border-radius: 0.3rem !important;
@@ -523,6 +478,6 @@ p{
     box-sizing: border-box !important;
     z-index: 9990 !important;
 }
-}
+} */
     
 

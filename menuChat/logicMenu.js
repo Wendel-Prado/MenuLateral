@@ -14,6 +14,7 @@ function handleClick(){
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
     var callMe = document.getElementById("div-callMe")
+    var boxTxt = document.querySelector(".boxTxtT12")
     if ( wpp.style.display === "none" ){
         wpp.style.display = "block";
     } else {
@@ -33,10 +34,13 @@ function handleClick(){
 
 }
 function hideBoxTxt(){
-    let boxTxt = document.querySelector(".boxTxtT12")
-    if (boxTxt.style.display === "block"){
-        boxTxt.style.display = "none"
+    var boxTxt = document.querySelector(".boxTxtT12")
+    if (boxTxt.style.display === '' || boxTxt.style.display === 'flex' ){
+        boxTxt.style.display = 'none'
     } 
+    else {
+        boxTxt.style.display = 'flex'
+    }
 }
 
 function clickMaisIm(){
@@ -47,22 +51,22 @@ function clickMaisIm(){
     if (preventClick === null){
     var elem = document.createElement('script');
     var script = document.getElementsByTagName('script')[0];
-
     elem.async=!0;
     elem.src="https://beta-chat.nvoip.com.br/support/assets/js/core/embed.js";
     elem.id='maisim';
     elem.charset='utf-8';
-    elem.setAttribute('data-token', "faa192e0fcc4993193b30dc38efd5d35");
+    elem.setAttribute('data-partner','nvoip');
+    elem.setAttribute('data-token', "75ee4623a9a19e098718a830adabf6e4");
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
+    hideBoxTxt()
 
     } else if (preventClick !== null){
         document.querySelector('#mais-support-header').click()
-        
+        hideBoxTxt()
     }
     handleClick()
-    hideBoxTxt()
 }
      
 function clickCallme(){
@@ -97,17 +101,17 @@ function clickCallme(){
     setTimeout(()=>{
         document.querySelector("._6h2kp91").click()
     
-    },300);
+    },1000);
     handleClick()
-    hideBoxTxt()
 }
 
 function closeMaisIm(){
     
     if(document.querySelector('.hide') != null){
         if(document.querySelector('.minimized.closed') === null){
-    document.querySelector('.hide').click()}
-    }
+    document.querySelector('.hide').click()
+hideBoxTxt()}
+        }
 }
 function openModal(){
     closeMaisIm()
@@ -119,7 +123,6 @@ function openModal(){
     const urlDesktop = 'https://web.whatsapp.com/';
     const urlMobile = 'whatsapp://';
     const telefone = '551141186267';
-
     buttonSubmit.addEventListener('click', (event) => {
         event.preventDefault()
         buttonSubmit.disabled = true
@@ -161,8 +164,9 @@ function openModal(){
             e.target.value = masks[field](e.target.value)
             }, false)
         })
+
         handleClick()
-        hideBoxTxt()
+        
     } else {
         closeModal()
     }
@@ -173,6 +177,8 @@ function openModal(){
     function closeModal(){
         let open = document.getElementById("popupFormWpp")
         open.classList.remove("active");
+        
+                
     }
     function isMobile() {
         if (sessionStorage.desktop)
