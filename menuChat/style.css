@@ -267,7 +267,13 @@
     font-size: 16px !important;
     font-family: 'Raleway';
 }
-.popupFormWpp .form .form-element-popupFormWpp input[type="text"]{
+#inputName{
+    margin-bottom: 0.3rem;
+}
+#inputEmail{
+    margin-bottom: 0.3rem;
+}
+#inputCelular{
     margin-bottom: 0.3rem;
 }
 .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
@@ -280,6 +286,45 @@
     border: 1px solid rgb(233, 233, 233);
     border-radius: 10px;
 }
+.popupFormWpp .form .form-element-popupFormErrorWpp input[type="text"],
+.popupFormWpp .form .form-element-popupFormErrorWpp input[type="tel"]{
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #b40404;
+    border-radius: 10px;
+}
+.popupFormWpp .form .form-element-popupFormErrorWpp {
+    color:#b40404
+}
+#warningName{
+    color: #c21414;
+    font-family: 'Raleway';
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 10px;
+    margin-left: 2px;
+}
+#warningEmail{
+    color: #c21414;
+    font-family: 'Raleway';
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+#warningPhone{
+    color: #c21414;
+    font-family: 'Raleway';
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 10px;
+    margin-left: 2px;
+}
+
 .popupFormWpp .form .form-element-popupFormWpp input[type="checkbox"]{
     margin-top: 0.4rem;
     border: 1px solid rgb(233, 233, 233);

@@ -29,7 +29,7 @@
 
 		script.async = !0;
 		script.charset = 'UTF-8';
-		script.src = `https://menulateralnvoip.s3.sa-east-1.amazonaws.com/logicMenu.js`;
+		script.src = `logicMenu.js`;
 
 	
 
@@ -46,9 +46,9 @@
 		link.id= 'menu-nvoip'
 		if(chatNvoipElement.getAttribute('iswordpress') === 'true')
 		{
-		link.href = 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/styleWP.css';}
+		link.href = 'styleWP.css';}
 		else{
-		link.href = 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/style.css';
+		link.href = 'style.css';
 		}
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
@@ -85,7 +85,7 @@
 		}
 		
 		
-		load('https://menulateralnvoip.s3.sa-east-1.amazonaws.com/template.html', function (data) {
+		load('template.html', function (data) {
 			let template = data.responseText
 		  div.innerHTML = template
 		});

@@ -52,17 +52,15 @@ function clickMaisIm(){
     var elem = document.createElement('script');
     var script = document.getElementsByTagName('script')[0];
     elem.async=!0;
-    elem.src="https://beta-chat.nvoip.com.br/support/assets/js/core/embed.js";
+    elem.src="https://beta-app.mais.im/support/assets/js/core/embed.js";
     elem.id='maisim';
     elem.charset='utf-8';
     elem.setAttribute('data-partner','nvoip');
-    elem.setAttribute('data-token', "75ee4623a9a19e098718a830adabf6e4");
+    elem.setAttribute('data-token', "faa192e0fcc4993193b30dc38efd5d35");
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
     hideBoxTxt()
-    document.querySelector('.expand').remove()
-    document.querySelector('.hide').addEventListener('click',hideBoxTxt())
     } else if (preventClick !== null){
         document.querySelector('#mais-support-header').click()
         hideBoxTxt()
@@ -99,10 +97,11 @@ function clickCallme(){
     }
     automatic ()
     
-    setTimeout(()=>{
+    let timeout = setTimeout(()=>{
         document.querySelector("._6h2kp91").click()
     
     },1000);
+    timeout.clearInterval();
     handleClick()
 }
 
@@ -117,6 +116,7 @@ hideBoxTxt()}
 function openModal(){
     closeMaisIm()
     if(document.querySelector('.popupFormWpp.active') === null){
+    const valueTelephone = document.querySelector("#telefone");
     let open = document.getElementById("popupFormWpp")
     open.classList.add("active");
     const formulario = document.querySelector('#formulario');
@@ -124,28 +124,66 @@ function openModal(){
     const urlDesktop = 'https://web.whatsapp.com/';
     const urlMobile = 'whatsapp://';
     const telefone = '551141186267';
-    
+
     buttonSubmit.addEventListener('click', (event) => {
         event.preventDefault()
-        buttonSubmit.disabled = true
-        saveForm()
-        setTimeout(() => {
+        
+        
             let nome = document.querySelector('#nome').value
             let celular = document.querySelector('#telefone').value
             let email = document.querySelector('#email').value
-            let mensagem = 'send?phone=' + telefone + '&text=Gostaria de conversar mais sobre como a Nvoip pode ajudar minha empresa%0AMeu Nome é ' + nome + '%0AMeu telefone para contato:%0A' + celular + '%0AMeu email:%0A' + email + ''
+            let variavelName = document.querySelector("#warningName")
+            let variavelPhone = document.querySelector("#warningPhone")
+            let variavelEmail = document.querySelector("#warningEmail")
+            if(nome.trim() == '' || nome.length < 4){
+                variavelName.style.display = "flex";
+                return
+            }
+            if(email.length == '' || variavelEmail.style.display === 'flex'){
+                variavelEmail.style.display = 'flex';
+                return
+            } 
+
+            if(celular.length !== 15 && celular.length !== 14){
+                variavelPhone.style.display = "flex";
+                return
+            } 
+            
+            
+            
+
+            let mensagem = 'send?phone=' + telefone + '&text=Olá, gostaria de conversar mais sobre como a Nvoip pode ajudar minha empresa!%0AMeu nome é ' + nome + '%0AMeu telefone para contato: ' + celular + '%0AMeu email: ' + email + ''
             if(isMobile()) {
                 window.open(urlMobile + mensagem, '_blank')
             }else{
                 window.open(urlDesktop + mensagem, '_blank')
             }
+            
             buttonSubmit.disabled = false
             document.getElementsByClassName("box").click()
-        }, 300);
-       
+            saveForm()
+        
     } );
+    
 
-        const masks = {
+ 
+    const masksName = {
+        nome (nome){
+            return nome
+            .replace(/[0-9]+/g, '')
+            .replace(/[!#$%&'@,.;:+/=?^_`{|}~-]+/g,'')
+           
+        }
+    } 
+    document.querySelectorAll('#nome').forEach($input => {
+        const field = $input.dataset.js
+    
+        $input.addEventListener('input', e => {
+        e.target.value = masksName[field](e.target.value)
+        }, false)
+    })
+    
+        const masksPhone = {
         phone (celular) {
             return celular
             .replace(/\D+/g, '')
@@ -154,12 +192,13 @@ function openModal(){
             .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
             .replace(/(-\d{4})\d+?$/, '$1')
         }
+
         }
-        document.querySelectorAll('input').forEach($input => {
+        document.querySelectorAll('#telefone').forEach($input => {
             const field = $input.dataset.js
         
             $input.addEventListener('input', e => {
-            e.target.value = masks[field](e.target.value)
+            e.target.value = masksPhone[field](e.target.value)
             }, false)
         })
 
@@ -168,8 +207,14 @@ function openModal(){
     } else {
         closeModal()
     }
-        
-        
+
+    };
+
+    function cleanError(){
+        let variavel = document.getElementById("telefone")
+                let variavelMessage = document.querySelector("small")
+                variavelMessage.innerText = "";
+                variavel.parentElement.className = "form-element-popupFormWpp";
     };
 
     function closeModal(){
@@ -227,6 +272,51 @@ function saveForm() {
       .catch(error => console.log('error', error));
 }
 
+function validacaoEmail(field) {
+let usuario = field.value.substring(0, field.value.indexOf("@"));
+let dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.length);
+if ((usuario.length >=1) &&
+    (dominio.length >=3) &&
+    (usuario.search("@")==-1) &&
+    (dominio.search("@")==-1) &&
+    (usuario.search(" ")==-1) &&
+    (dominio.search(" ")==-1) &&
+    (dominio.search(".")!=-1) &&
+    (dominio.indexOf(".") >=1)&&
+    (dominio.lastIndexOf(".") < dominio.length - 1)) {
+        let variavelMessage = document.querySelector("#warningEmail")
+        variavelMessage.style.display = 'none';
 
+}
+else if (usuario.trim() == ''){
+    let variavelMessage = document.querySelector("#warningEmail")
+    variavelMessage.style.display = 'flex';
+
+}
+}
+    
+
+function validacaoNome(field){
+    let nome = document.querySelector('#nome').value
+if(nome.trim() == '' || nome.length < 4){
+    let variavelMessage = document.querySelector("#warningName")
+    variavelMessage.style.display = "flex";
+    
+}else{
+    let variavelMessage = document.querySelector("#warningName")
+    variavelMessage.style.display = "none";
+}
+}
+function validacaoCelular(field){
+let celular = document.querySelector('#telefone').value
+if(celular.length !== 15 && celular.length !== 14){
+    let variavelMessage = document.querySelector("#warningPhone")
+    variavelMessage.style.display = "flex";
+  
+} else{
+    let variavelMessage = document.querySelector("#warningPhone")
+    variavelMessage.style.display = "none";
+}
+}
 
 

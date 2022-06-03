@@ -37,7 +37,7 @@
     height: 19px;
     border-radius: 0.3rem;
     position: fixed;
-    bottom: 29px;
+    bottom: 52px;
     right: 85px;
     color: #000;
     background-color: #ffffff;
@@ -364,6 +364,7 @@ p{
         z-index: 9990!important;
         font-family: 'Raleway', sans-serif;
     }
+   
     .popupFormWpp .form .form-element-popupFormWpp input[type="text"],
     .popupFormWpp .form .form-element-popupFormWpp input[type="tel"]{
         display: block !important;
@@ -429,24 +430,7 @@ p{
         box-sizing: border-box !important;
         z-index: 9990 !important;
     }
-    /* .boxTxtT12{
-        width: 195px !important;
-        height: 5px !important;
-        border-radius: 0.3rem !important;
-        position: fixed !important;
-        bottom: 32px !important;
-        right: 72px!important; 
-        color: #000 !important;
-        background-color: #ffffff !important;
-        border: 1px solid #dddddd !important;
-        display: flex !important;
-        flex-direction: row!important;
-        font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
-        align-items: center !important;
-        padding: 20px !important;
-        box-sizing: border-box !important;
-        z-index: 9990 !important;
-    } */
+  
 }
 @media only screen and (max-width:1500px){  
     #mais-support-widget{
@@ -461,24 +445,6 @@ p{
     z-index: 9990 !important;
 }
 }
-/* .boxTxtT12{
-    width: 195px !important;
-    height: 5px !important;
-    border-radius: 0.3rem !important;
-    position: fixed !important;
-    bottom: 32px !important;
-    right: 93px !important;
-    color: #000 !important;
-    background-color: #ffffff !important;
-    border: 1px solid #dddddd !important;
-    display: flex !important;
-    flex-direction: row !important;
-    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
-    align-items: center !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
-    z-index: 9990 !important;
-}
-} */
+
     
 
