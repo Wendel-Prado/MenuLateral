@@ -7,10 +7,10 @@
  */
 
  'use strict';
- 
+
 
 function handleClick(){
-    
+    hideBoxTxt()
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
     var callMe = document.getElementById("div-callMe")
@@ -35,12 +35,28 @@ function handleClick(){
 }
 function hideBoxTxt(){
     var boxTxt = document.querySelector(".boxTxtT12")
-    if (boxTxt.style.display === '' || boxTxt.style.display === 'flex' ){
-        boxTxt.style.display = 'none'
-    } 
-    else {
+    var openWPP = document.querySelector("#show-login")
+    var MaisIm = document.getElementById("div-maisIm")
+
+    openWPP.addEventListener('click', (event) => {
+        event.preventDefault()
         boxTxt.style.display = 'flex'
-    }
+    })
+   
+
+    var openCallme = document.querySelector("#div-callMe")
+    openCallme.addEventListener('click', (event) => {
+        event.preventDefault()
+        boxTxt.style.display = 'flex'
+    })
+
+    let closeMaisim = document.querySelector('#mais-support-header')
+    closeMaisim.addEventListener('click', (event) => {
+        event.preventDefault()
+        boxTxt.style.display = 'flex'
+    })
+
+  
 }
 
 function clickMaisIm(){
@@ -60,10 +76,15 @@ function clickMaisIm(){
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
-    hideBoxTxt()
+    document.querySelector(".boxTxtT12").style.display = 'none'
     } else if (preventClick !== null){
         document.querySelector('#mais-support-header').click()
-        hideBoxTxt()
+        if (document.querySelector('#mais-support-widget.opened.minimized') !== null){
+            document.querySelector(".boxTxtT12").style.display = 'none'
+        } else {
+            document.querySelector(".boxTxtT12").style.display = 'flex'
+        }
+
     }
     handleClick()
 }
@@ -110,9 +131,10 @@ function closeMaisIm(){
     if(document.querySelector('.hide') != null){
         if(document.querySelector('.minimized.closed') === null){
     document.querySelector('.hide').click()
-hideBoxTxt()}
+}
         }
 }
+
 function openModal(){
     closeMaisIm()
     if(document.querySelector('.popupFormWpp.active') === null){
@@ -288,7 +310,7 @@ if ((usuario.length >=1) &&
         variavelMessage.style.display = 'none';
 
 }
-else if (usuario.trim() == ''){
+else {
     let variavelMessage = document.querySelector("#warningEmail")
     variavelMessage.style.display = 'flex';
 
@@ -298,7 +320,7 @@ else if (usuario.trim() == ''){
 
 function validacaoNome(field){
     let nome = document.querySelector('#nome').value
-if(nome.trim() == '' || nome.length < 4){
+if(nome.trim() == '' || nome.length < 3){
     let variavelMessage = document.querySelector("#warningName")
     variavelMessage.style.display = "flex";
     

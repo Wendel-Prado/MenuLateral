@@ -9,7 +9,7 @@
     margin: 35px;
     padding: 0;
 }
-#mais-support-widget.closed.maximized.compact{
+#mais-support-widget #mais-support-app.closed.maximized{
     display: none;
 }
 #mais-support-widget #mais-support-app #mais-support-wrapper #mais-support-header a.hide {
