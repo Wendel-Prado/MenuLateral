@@ -44,12 +44,9 @@
 		const chatNvoipElement = document.querySelector('#chatNvoip');
 		const link = document.createElement('link');
 		link.id= 'menu-nvoip'
-		if(chatNvoipElement.getAttribute('iswordpress') === 'true')
-		{
-		link.href = 'styleWP.css';}
-		else{
+		
 		link.href = 'style.css';
-		}
+		
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
 		

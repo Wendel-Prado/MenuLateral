@@ -10,7 +10,6 @@
 
 
 function handleClick(){
-    hideBoxTxt()
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
     var callMe = document.getElementById("div-callMe")
@@ -33,37 +32,14 @@ function handleClick(){
     
 
 }
-function hideBoxTxt(){
-    var boxTxt = document.querySelector(".boxTxtT12")
-    var openWPP = document.querySelector("#show-login")
-    var MaisIm = document.getElementById("div-maisIm")
 
-    openWPP.addEventListener('click', (event) => {
-        event.preventDefault()
-        boxTxt.style.display = 'flex'
-    })
-   
-
-    var openCallme = document.querySelector("#div-callMe")
-    openCallme.addEventListener('click', (event) => {
-        event.preventDefault()
-        boxTxt.style.display = 'flex'
-    })
-
-    let closeMaisim = document.querySelector('#mais-support-header')
-    closeMaisim.addEventListener('click', (event) => {
-        event.preventDefault()
-        boxTxt.style.display = 'flex'
-    })
-
-  
-}
 
 function clickMaisIm(){
     closeModal()
+    const scriptNvoip = document.querySelector('#chatNvoip')
     const preventClick = document.querySelector('#mais-support-widget')
-    const teste = document.querySelector('#mais-support-app')
-    
+    const MaisIm = document.querySelector('#mais-support-app')
+    let tokenMaisIm = scriptNvoip.getAttribute('tokenmaisim')
     if (preventClick === null){
     var elem = document.createElement('script');
     var script = document.getElementsByTagName('script')[0];
@@ -71,8 +47,7 @@ function clickMaisIm(){
     elem.src="https://beta-app.mais.im/support/assets/js/core/embed.js";
     elem.id='maisim';
     elem.charset='utf-8';
-    elem.setAttribute('data-partner','nvoip');
-    elem.setAttribute('data-token', "faa192e0fcc4993193b30dc38efd5d35");
+    elem.setAttribute('data-token', tokenMaisIm);
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
@@ -84,7 +59,13 @@ function clickMaisIm(){
         } else {
             document.querySelector(".boxTxtT12").style.display = 'flex'
         }
-
+        document.querySelector('#mais-support-header').addEventListener('click', ()=> {
+            if (document.querySelector('#mais-support-widget.opened.minimized') !== null){
+                document.querySelector(".boxTxtT12").style.display = 'none'
+            } else {
+                document.querySelector(".boxTxtT12").style.display = 'flex'
+            }
+        })
     }
     handleClick()
 }
@@ -148,6 +129,7 @@ function openModal(){
     const telefone = '551141186267';
 
     buttonSubmit.addEventListener('click', (event) => {
+        saveForm()
         event.preventDefault()
         
         
@@ -182,8 +164,7 @@ function openModal(){
             }
             
             buttonSubmit.disabled = false
-            document.getElementsByClassName("box").click()
-            saveForm()
+            document.querySelector(".close-btn").click()
         
     } );
     

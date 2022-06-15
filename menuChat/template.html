@@ -40,17 +40,17 @@
                         <h3 id="titleWPP">Olá! Preencha os campos abaixo para iniciar a conversa no WhatsApp</h3>
                         <div class="form-element-popupFormWpp" id='inputName'>
                             
-                            <input type="text" id="nome" name="nome" onblur="validacaoNome(f1.nome)"placeholder="Nome*" required="required" value="" data-js="nome" maxlength="250" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
+                            <input type="text" id="nomeWPP" name="nome" onblur="validacaoNome(f1.nome)"placeholder="Nome*" required="required" value="" data-js="nome" maxlength="250" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
                             <p id="warningName" style="display: none;">Insira um nome válido</p>
                         </div>
                         <div class="form-element-popupFormWpp" id='inputEmail'>
                             
-                            <input type="text" id="email" name="email" onblur="validacaoEmail(f1.email)" placeholder="Email*" required="required" value="" data-js="email" maxlength="100">
+                            <input type="text" id="emailWPP" name="email" onblur="validacaoEmail(f1.email)" placeholder="Email*" required="required" value="" data-js="email" maxlength="100">
                             <p id="warningEmail" style="display: none;">Insira um email válido</p>
                         </div>
                          <div class="form-element-popupFormWpp" id='inputCelular'>
                             
-                            <input type="text" name="telefone" onblur="validacaoCelular(f1.telefone)" id="telefone" required="required" placeholder="Celular*" maxlength="15" data-js="phone" />
+                            <input type="text" name="telefone" onblur="validacaoCelular(f1.telefone)" id="telefoneWPP" required="required" placeholder="Celular*" maxlength="15" data-js="phone" />
                             <p id="warningPhone" style="display: none;">Insira um telefone válido</p>
                         </div>
                         <div class="form-element-popupFormWpp">
@@ -60,7 +60,7 @@
                         <p class="termsWPP">Ao informar meus dados, eu concordo com a <a href="https://www.nvoip.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a>  e com os <a href="https://www.nvoip.com.br/documentos/termo-de-uso.pdf" target="_blank">Termos de Uso</a>. </p>
                         <div class="form-element-popupFormWpp">
                             
-                            <button id="submit3" type="submit" > Iniciar a conversa</button>
+                            <div id="submit3" type="submit" > Iniciar a conversa</div>
                             
                         </div>
                 </div>
