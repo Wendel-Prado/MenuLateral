@@ -7,8 +7,8 @@
  */
 
  'use strict';
-
-
+let counter = 0;
+let time = null;
 function handleClick(){
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
@@ -30,16 +30,42 @@ function handleClick(){
         callMe.style.display = "none";
     } 
     
+    document.querySelector('.expand').removeAttribute('original-title')
 
 }
 
+function requestMaisIm(){
+const scriptNvoip = document.querySelector('#chatNvoip')
+const preventClick = document.querySelector('#mais-support-widget')
 
+if (preventClick === null){
+var elem = document.createElement('script');
+var script = document.getElementsByTagName('script')[0];
+elem.async=!0;
+elem.src="https://beta-app.mais.im/support/assets/js/core/embed.js";
+elem.id='maisim';
+elem.charset='utf-8';
+elem.setAttribute('data-partner', 'nvoip')
+elem.setAttribute('data-token', scriptNvoip.getAttribute('tokenmaisim'));
+elem.setAttribute('data-untracked-visitor', true);
+script.parentNode.insertBefore(elem,script);
+
+} else {
+    
+}
+
+}
+requestMaisIm()
 function clickMaisIm(){
+    
     closeModal()
     const scriptNvoip = document.querySelector('#chatNvoip')
     const preventClick = document.querySelector('#mais-support-widget')
-    const MaisIm = document.querySelector('#mais-support-app')
-    let tokenMaisIm = scriptNvoip.getAttribute('tokenmaisim')
+    
+    if(document.querySelector('#chatNvoip').getAttribute('position') === 'left'){
+        preventClick.setAttribute('style','left:90px')
+    }
+
     if (preventClick === null){
     var elem = document.createElement('script');
     var script = document.getElementsByTagName('script')[0];
@@ -47,17 +73,21 @@ function clickMaisIm(){
     elem.src="https://beta-app.mais.im/support/assets/js/core/embed.js";
     elem.id='maisim';
     elem.charset='utf-8';
-    elem.setAttribute('data-token', tokenMaisIm);
+    elem.setAttribute('data-maisim-partner', 'nvoip')
+    elem.setAttribute('data-token', scriptNvoip.getAttribute('tokenmaisim'));
     elem.setAttribute('data-maximized',true);
     elem.setAttribute('data-untracked-visitor', true);
     script.parentNode.insertBefore(elem,script);
     document.querySelector(".boxTxtT12").style.display = 'none'
+   
     } else if (preventClick !== null){
         document.querySelector('#mais-support-header').click()
+       
         if (document.querySelector('#mais-support-widget.opened.minimized') !== null){
             document.querySelector(".boxTxtT12").style.display = 'none'
         } else {
             document.querySelector(".boxTxtT12").style.display = 'flex'
+            document.querySelector('.expand').removeAttribute('original-title')
         }
         document.querySelector('#mais-support-header').addEventListener('click', ()=> {
             if (document.querySelector('#mais-support-widget.opened.minimized') !== null){
@@ -70,9 +100,9 @@ function clickMaisIm(){
     handleClick()
 }
      
-function clickCallme(){
-    closeModal()
-    closeMaisIm()
+function requestCallme(){
+    const scriptNvoip = document.querySelector('#chatNvoip')
+    
     async function automatic (){
     const preventClick = document.querySelector('#callMe')
     if(preventClick == null){
@@ -88,7 +118,7 @@ function clickCallme(){
     const script = document.createElement('script');
     script.src = "https://nvoipcom.s3.sa-east-1.amazonaws.com/public/callme/dist2/bundle.js";
     script.onload = function(){
-        window.nvoipcallpage.init("900150983cd24fb0d6963f7d28e17f72");
+        window.nvoipcallpage.init(scriptNvoip.getAttribute('tokencallme'));
     }
    
     
@@ -99,12 +129,17 @@ function clickCallme(){
     }
     automatic ()
     
-    let timeout = setTimeout(()=>{
-        document.querySelector("._6h2kp91").click()
-    
-    },1000);
-    timeout.clearInterval();
+   
+}
+requestCallme()
+
+function clickCallme(){
+    closeMaisIm()
+    closeModal()
     handleClick()
+    document.querySelector("._6h2kp91").click()
+
+
 }
 
 function closeMaisIm(){
@@ -119,7 +154,7 @@ function closeMaisIm(){
 function openModal(){
     closeMaisIm()
     if(document.querySelector('.popupFormWpp.active') === null){
-    const valueTelephone = document.querySelector("#telefone");
+    const valueTelephone = document.querySelector("#telefoneWPP");
     let open = document.getElementById("popupFormWpp")
     open.classList.add("active");
     const formulario = document.querySelector('#formulario');
@@ -127,15 +162,95 @@ function openModal(){
     const urlDesktop = 'https://web.whatsapp.com/';
     const urlMobile = 'whatsapp://';
     const telefone = '551141186267';
+    
+    const masksName = {
+        nome (nome){
+            return nome
+            .replace(/[0-9]+/g, '')
+            .replace(/[!#$%&'@,.;:+/=?^_`{|}~-]+/g,'')
+           
+        }
+    } 
+    document.querySelectorAll('#nomeWPP').forEach($input => {
+        const field = $input.dataset.js
+    
+        $input.addEventListener('input', e => {
+        e.target.value = masksName[field](e.target.value)
+        }, false)
+    })
+    
+        const masksPhone = {
+        phone (celular) {
+            return celular
+            .replace(/\D+/g, '')
+            .replace(/(\d{2})(\d)/, '($1) $2')
+            .replace(/(\d{4})(\d)/, '$1-$2')
+            .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+            .replace(/(-\d{4})\d+?$/, '$1')
+        }
 
-    buttonSubmit.addEventListener('click', (event) => {
-        saveForm()
-        event.preventDefault()
+        }
+        document.querySelectorAll('#telefoneWPP').forEach($input => {
+            const field = $input.dataset.js
         
+            $input.addEventListener('input', e => {
+            e.target.value = masksPhone[field](e.target.value)
+            }, false)
+        })
+
+        handleClick()
         
-            let nome = document.querySelector('#nome').value
-            let celular = document.querySelector('#telefone').value
-            let email = document.querySelector('#email').value
+    } else {
+        closeModal()
+    }
+
+    };
+
+function cleanError(){
+        let variavel = document.getElementById("telefoneWPP")
+                let variavelMessage = document.querySelector("small")
+                variavelMessage.innerText = "";
+                variavel.parentElement.className = "form-element-popupFormWpp";
+};
+
+function closeModal(){
+        let open = document.getElementById("popupFormWpp")
+        open.classList.remove("active");
+        
+                
+}
+function isMobile() {
+        if (sessionStorage.desktop)
+            return false;
+        else if (localStorage.mobile)
+            return true;
+        var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
+        for (var i in mobile)
+            if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
+        return false;
+}
+
+var url_atual = window.location.href;
+let ip = '';
+   
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", 'https://api.ipify.org?format=json');
+xmlhttp.send();
+xmlhttp.onload = function(e) {
+ ip = xmlhttp.response;
+}
+
+function buttonSubmit(){
+    let open = document.getElementById("popupFormWpp")
+    open.classList.add("active");
+    const formulario = document.querySelector('#formulario');
+    const urlDesktop = 'https://web.whatsapp.com/';
+    const urlMobile = 'whatsapp://';
+    const telefone = '551141186267';
+     saveForm()
+    let nome = document.querySelector('#nomeWPP').value
+            let celular = document.querySelector('#telefoneWPP').value
+            let email = document.querySelector('#emailWPP').value
             let variavelName = document.querySelector("#warningName")
             let variavelPhone = document.querySelector("#warningPhone")
             let variavelEmail = document.querySelector("#warningEmail")
@@ -161,96 +276,18 @@ function openModal(){
                 window.open(urlMobile + mensagem, '_blank')
             }else{
                 window.open(urlDesktop + mensagem, '_blank')
+                
             }
-            
+            event.preventDefault(time)
             buttonSubmit.disabled = false
             document.querySelector(".close-btn").click()
-        
-    } );
-    
 
- 
-    const masksName = {
-        nome (nome){
-            return nome
-            .replace(/[0-9]+/g, '')
-            .replace(/[!#$%&'@,.;:+/=?^_`{|}~-]+/g,'')
-           
-        }
-    } 
-    document.querySelectorAll('#nome').forEach($input => {
-        const field = $input.dataset.js
-    
-        $input.addEventListener('input', e => {
-        e.target.value = masksName[field](e.target.value)
-        }, false)
-    })
-    
-        const masksPhone = {
-        phone (celular) {
-            return celular
-            .replace(/\D+/g, '')
-            .replace(/(\d{2})(\d)/, '($1) $2')
-            .replace(/(\d{4})(\d)/, '$1-$2')
-            .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-            .replace(/(-\d{4})\d+?$/, '$1')
-        }
-
-        }
-        document.querySelectorAll('#telefone').forEach($input => {
-            const field = $input.dataset.js
-        
-            $input.addEventListener('input', e => {
-            e.target.value = masksPhone[field](e.target.value)
-            }, false)
-        })
-
-        handleClick()
-        
-    } else {
-        closeModal()
-    }
-
-    };
-
-    function cleanError(){
-        let variavel = document.getElementById("telefone")
-                let variavelMessage = document.querySelector("small")
-                variavelMessage.innerText = "";
-                variavel.parentElement.className = "form-element-popupFormWpp";
-    };
-
-    function closeModal(){
-        let open = document.getElementById("popupFormWpp")
-        open.classList.remove("active");
-        
-                
-    }
-    function isMobile() {
-        if (sessionStorage.desktop)
-            return false;
-        else if (localStorage.mobile)
-            return true;
-        var mobile = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
-        for (var i in mobile)
-            if (navigator.userAgent.toLowerCase().indexOf(mobile[i].toLowerCase()) > 0) return true;
-        return false;
-    }
-
-var url_atual = window.location.href;
-let ip = '';
-   
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", 'https://api.ipify.org?format=json');
-xmlhttp.send();
-xmlhttp.onload = function(e) {
- ip = xmlhttp.response;
 }
     
 function saveForm() {
-    let nome = document.querySelector('#nome').value
-    let celular = document.querySelector('#telefone').value
-    let email = document.querySelector('#email').value
+    let nome = document.querySelector('#nomeWPP').value
+    let celular = document.querySelector('#telefoneWPP').value
+    let email = document.querySelector('#emailWPP').value
     let canReceiveCalls = document.querySelector('#confirm').checked
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -300,7 +337,7 @@ else {
     
 
 function validacaoNome(field){
-    let nome = document.querySelector('#nome').value
+    let nome = document.querySelector('#nomeWPP').value
 if(nome.trim() == '' || nome.length < 3){
     let variavelMessage = document.querySelector("#warningName")
     variavelMessage.style.display = "flex";
@@ -311,7 +348,7 @@ if(nome.trim() == '' || nome.length < 3){
 }
 }
 function validacaoCelular(field){
-let celular = document.querySelector('#telefone').value
+let celular = document.querySelector('#telefoneWPP').value
 if(celular.length !== 15 && celular.length !== 14){
     let variavelMessage = document.querySelector("#warningPhone")
     variavelMessage.style.display = "flex";
@@ -321,5 +358,38 @@ if(celular.length !== 15 && celular.length !== 14){
     variavelMessage.style.display = "none";
 }
 }
+
+
+
+  function timeout(){
+  
+    time = setInterval(function(){
+    counter = counter + 1
+    let iconWpp = document.getElementById("div-wpp")
+    let iconMaisIm = document.getElementById("div-maisIm")
+    let iconCallMe = document.getElementById("div-callMe")
+    let iconBoxTxt = document.querySelector(".boxTxtT12")
+    let iconBoxNvoip = document.querySelector("#boxNvoip")
+    if(iconWpp != null || counter > 270){
+    clearInterval(time)
+    if(document.querySelector('#chatNvoip').getAttribute('position') === 'left'){
+    iconBoxNvoip.setAttribute('style', 'left: 30px')
+    iconBoxTxt.setAttribute('style','display:flex; left:95px')
+    iconCallMe.setAttribute('style', 'display:none; left: 35px')
+    iconMaisIm.setAttribute('style', 'display:none; left: 35px')
+    iconWpp.setAttribute('style', 'display:none; left: 35px')
+
+    
+    }}
+
+},15)
+
+}
+
+
+timeout()
+
+  
+
 
 
