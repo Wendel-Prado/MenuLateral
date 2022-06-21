@@ -8,7 +8,7 @@
 
  'use strict';
 let counter = 0;
-let time = null;
+let tempRender = null;
 function handleClick(){
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
@@ -278,7 +278,7 @@ function buttonSubmit(){
                 window.open(urlDesktop + mensagem, '_blank')
                 
             }
-            event.preventDefault(time)
+            event.preventDefault(tempRender)
             buttonSubmit.disabled = false
             document.querySelector(".close-btn").click()
 
@@ -363,24 +363,34 @@ if(celular.length !== 15 && celular.length !== 14){
 
   function timeout(){
   
-    time = setInterval(function(){
+    tempRender = setInterval(function(){
     counter = counter + 1
     let iconWpp = document.getElementById("div-wpp")
     let iconMaisIm = document.getElementById("div-maisIm")
     let iconCallMe = document.getElementById("div-callMe")
     let iconBoxTxt = document.querySelector(".boxTxtT12")
     let iconBoxNvoip = document.querySelector("#boxNvoip")
+    
     if(iconWpp != null || counter > 270){
-    clearInterval(time)
-    if(document.querySelector('#chatNvoip').getAttribute('position') === 'left'){
+    clearInterval(tempRender)
+    iconBoxTxt.innerHTML =  document.querySelector('#chatNvoip').getAttribute('balloontxt')
+    if(document.querySelector('#chatNvoip').getAttribute('position') === 'left' ){
     iconBoxNvoip.setAttribute('style', 'left: 30px')
     iconBoxTxt.setAttribute('style','display:flex; left:95px')
     iconCallMe.setAttribute('style', 'display:none; left: 35px')
     iconMaisIm.setAttribute('style', 'display:none; left: 35px')
     iconWpp.setAttribute('style', 'display:none; left: 35px')
 
+
+    } else if(document.querySelector('#chatNvoip').getAttribute('position') !== 'left'){
+        iconBoxTxt.setAttribute('style', 'display:flex; right: 85px')
+    }
     
-    }}
+    if (document.querySelector('#chatNvoip').getAttribute('balloontxt') === ''){
+        iconBoxTxt.style.display = 'none'
+    }
+
+}
 
 },15)
 

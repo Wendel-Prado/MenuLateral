@@ -40,12 +40,10 @@
     margin-top: 5px;
 }
 .boxTxtT12{
-    width: 210px;
     height: 19px;
     border-radius: 0.3rem;
     position: fixed;
     bottom: 29px;
-    right: 85px;
     color: #000;
     background-color: #ffffff;
     border: 1px solid #dddddd;
