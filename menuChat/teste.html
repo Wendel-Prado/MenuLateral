@@ -39,20 +39,20 @@
             win.top.chatNvoip || (function() {
                 element = doc.createElement(scriptTag);
                 scriptTag = doc.getElementsByTagName(scriptTag)[0];
-                element.src = 'embed.js';
+                element.src = 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/embed.js';
                 element.id = 'chatNvoip';
                 element.charset = 'utf-8';
-                element.setAttribute('balloontxt', 'Olá, vamos conversar?')
-                element.setAttribute('position', 'right');
+                element.setAttribute('balloontxt', 'Coloque-seu-texto')
+                element.setAttribute('position', 'left');
                 element.setAttribute('tokenMaisIm', 'be75f667caf27a4b52d519c299226f5f');
                 element.setAttribute('wpp-visible', 'true')
-                element.setAttribute('mais-im-visible', 'true')
+                element.setAttribute('mais-im-visible', 'false')
                 element.setAttribute('callme-visible', 'true')
                 element.setAttribute('tokencallme', '0500A55CCD353358F740BE823DADEDE337F2A0DE315EBB132FAA68A5AC604812');
                 scriptTag.parentNode.insertBefore(element, scriptTag);
             })()
         })
-    })(window, document, 'script', 'embed.js');
+    })(window, document, 'script', 'https://menulateralnvoip.s3.sa-east-1.amazonaws.com/embed.js');
     
     </script>
     

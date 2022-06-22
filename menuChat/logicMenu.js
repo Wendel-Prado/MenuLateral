@@ -41,7 +41,6 @@ function handleClick(){
     && document.querySelector('#chatNvoip').getAttribute('callme-visible') === 'false'){
         wpp.style.bottom = "55px"
     }
-    document.querySelector('.expand').removeAttribute('original-title')
 
 }
 
@@ -66,7 +65,9 @@ script.parentNode.insertBefore(elem,script);
 }
 
 }
+if(document.querySelector('#chatNvoip').getAttribute('mais-im-visible') !== 'false'){
 requestMaisIm()
+}
 function clickMaisIm(){
     
     closeModal()
@@ -142,8 +143,9 @@ function requestCallme(){
     
    
 }
+if(document.querySelector('#chatNvoip').getAttribute('callme-visible') !== 'false'){
 requestCallme()
-
+}
 function clickCallme(){
     closeMaisIm()
     closeModal()
