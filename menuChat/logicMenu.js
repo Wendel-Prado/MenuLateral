@@ -13,23 +13,34 @@ function handleClick(){
     var wpp = document.getElementById("div-wpp")
     var maisIm = document.getElementById("div-maisIm")
     var callMe = document.getElementById("div-callMe")
-    var boxTxt = document.querySelector(".boxTxtT12")
-    if ( wpp.style.display === "none" ){
+    if ( wpp.style.display === "none" &&  document.querySelector('#chatNvoip').getAttribute('wpp-visible') !== 'false'){
         wpp.style.display = "block";
     } else {
         wpp.style.display = "none";
     }
-    if ( maisIm.style.display === "none" ){
+    if ( maisIm.style.display === "none" && document.querySelector('#chatNvoip').getAttribute('mais-im-visible') !== 'false'){
         maisIm.style.display = "block";
     } else {
         maisIm.style.display = "none";
     }
-    if ( callMe.style.display === "none" ){
+    if ( callMe.style.display === "none" && document.querySelector('#chatNvoip').getAttribute('callme-visible') !== 'false'){
         callMe.style.display = "block";
     } else {
         callMe.style.display = "none";
     } 
     
+    if (document.querySelector('#chatNvoip').getAttribute('mais-im-visible') === 'false' 
+    && document.querySelector('#chatNvoip').getAttribute('callme-visible') !== 'false'){
+
+        wpp.style.bottom = "109px"
+    } else if (document.querySelector('#chatNvoip').getAttribute('mais-im-visible') !== 'false' 
+    && document.querySelector('#chatNvoip').getAttribute('callme-visible') === 'false'){
+        wpp.style.bottom = "108px"
+        maisIm.style.bottom = "60px"
+    }else if (document.querySelector('#chatNvoip').getAttribute('mais-im-visible') === 'false' 
+    && document.querySelector('#chatNvoip').getAttribute('callme-visible') === 'false'){
+        wpp.style.bottom = "55px"
+    }
     document.querySelector('.expand').removeAttribute('original-title')
 
 }
